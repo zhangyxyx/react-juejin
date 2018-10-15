@@ -7,8 +7,7 @@
 安装和运行
 ----
 技术栈
-
-react+redux
+* react+redux
 ----
 目标功能
 ----
