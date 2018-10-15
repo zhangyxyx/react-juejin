@@ -1,5 +1,4 @@
 # react-jianshu
-react+redux
 ====
 采用react+redux实现简书网站的前端页面展示
 ----
@@ -8,6 +7,8 @@ react+redux
 安装和运行
 ----
 技术栈
+
+react+redux
 ----
 目标功能
 ----
