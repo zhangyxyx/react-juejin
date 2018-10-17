@@ -4,7 +4,10 @@ import {
     HomeCon,HomeLeft,HomeConBanner,HotTopic,
     HomeTopicList,HomeTopicListItem,HomeTopicListItemLeft,HomeTopicListItemLeftTitle,HomeTopicListItemLeftCon,
     HomeTopicListItemLeftSort,HomeTopicListItemLeftSortEvery,HomeTopicListItemRight,
-    HotTopicList,HomeRight,HomeHot} from './style.js'
+    HotTopicList,HomeRight,HomeHot,
+    HomeUser,HomeUserList,HomeUserListLeft,HomeUserListCon,HomeUserListConTop,HomeUserListConBottom,HomeUserListRight,
+    HomeUserTitle,HomeUserTitleLeft,HomeUserTitleRight,HomeUserAll
+} from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
 
@@ -45,6 +48,27 @@ class Home extends React.Component{
                         <HomeHot className="serial"></HomeHot>
                         <HomeHot className="copyright"></HomeHot>
                         <HomeHot className="school"></HomeHot>
+                        <HomeUser>
+                            <HomeUserTitle>
+                                <HomeUserTitleLeft>关注作者</HomeUserTitleLeft>
+                                <HomeUserTitleRight><i className="iconfont">&#xe603;</i>换一批</HomeUserTitleRight>
+                            </HomeUserTitle>
+                            {
+                                this.props.user.map((item)=>{
+                                    return (
+                                        <HomeUserList key={item.id}>
+                                        <HomeUserListLeft><img src={item.ipc}/></HomeUserListLeft>
+                                        <HomeUserListCon>
+                                            <HomeUserListConTop>{item.val}</HomeUserListConTop>
+                                            <HomeUserListConBottom>写了{}字 · 8.7k喜欢</HomeUserListConBottom>
+                                        </HomeUserListCon>
+                                        <HomeUserListRight><i className="iconfont">&#xe608;</i>关注</HomeUserListRight>
+                                        </HomeUserList>
+                                    )
+                                })
+                            }
+                            <HomeUserAll>查看全部<i className="iconfont">&#xe65c;</i></HomeUserAll>
+                        </HomeUser>
                     </HomeRight>
                     
                 </HomeCon>
@@ -59,7 +83,8 @@ class Home extends React.Component{
 const mapStateToProps=(state)=>{
     return{
         topic:state.get('home').get('topic'),
-        list:state.get('home').get('list')
+        list:state.get('home').get('list'),
+        user:state.get('home').get('user')
     }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -67,6 +92,7 @@ const mapDispatchToProps=(dispatch)=>{
         showTopicList(){
             dispatch(actionCreators.showtopiclist())
             dispatch(actionCreators.showlist())
+            dispatch(actionCreators.showuserlist())
         },
         
     }

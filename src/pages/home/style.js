@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HomeCon=styled.div`
     width:80%;
     margin:20px auto;
-    border:1px solid #ccc;
+    overflow:auto;
 `   
 export const HomeLeft=styled.div`
     width:60%;
@@ -100,6 +100,75 @@ export const HomeHot=styled.div`
         background-size:100% 100%;
     }
 `  
+//用户列表
+export const HomeUserTitle=styled.div`
+    margin-top:20px;
+    width:100%;
+    height:20px;
+    font-size:14px;
+    color:#969696
+`
+export const HomeUserTitleLeft=styled.div`
+    height:20px;
+    float:left;
+`
+export const HomeUserTitleRight=styled.div`
+    height:20px;
+    float:right
+`
+
+export const HomeUser=styled.div`
+    width:100%
+`
+export const HomeUserList=styled.div`
+    width:100%;
+    height:47px;
+    margin-top:15px;
+`
+export const HomeUserListLeft=styled.div`
+    width:47px;
+    height:47px;
+    border-radius:50%;
+    float:left;
+    background:url('//upload.jianshu.io/users/upload_avatars/3884693/b425c707-d998-46a6-98b1-9b1e241513c3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp')
+`
+export const HomeUserListCon=styled.div`
+    margin-left:10px;
+    height:47px;
+    float:left;
+`
+export const HomeUserListConTop=styled.div`
+    height:30px;
+    font-size:14px;
+`
+export const HomeUserListConBottom=styled.div`
+    width:100%;
+    height:25px;
+    font-size:13px;
+`
+export const HomeUserListRight=styled.div`
+    height:25px;
+    font-size:13px;
+    float:right;
+    color:#42c02e
+`
+export const HomeUserAll=styled.div`
+    margin-top:20px;
+    padding: 7px 7px 7px 12px;
+    width: 100%;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    text-align:center;
+`
+
+//结束
+
+
+
+
 export const TopicStyle=styled.div`
     width:20px;
     height:40px;

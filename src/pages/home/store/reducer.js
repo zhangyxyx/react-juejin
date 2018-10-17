@@ -3,7 +3,8 @@ import {fromJS} from 'immutable'
 
 const defaultState=fromJS({
     topic:[],
-    list:[]
+    list:[],
+    user:[]
 });
 export default (state=defaultState,action)=>{
     if(action.type===constants.SHOW_TOPIC_LIST){
@@ -11,6 +12,9 @@ export default (state=defaultState,action)=>{
     }
     if(action.type===constants.SHOW_LIST){
         return state.set('list',action.data)
+    }
+    if(action.type===constants.SHOW_USER_LIST){
+        return state.set('user',action.data)
     }
     return state
 }
