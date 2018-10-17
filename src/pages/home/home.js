@@ -4,7 +4,7 @@ import {
     HomeCon,HomeLeft,HomeConBanner,HotTopic,
     HomeTopicList,HomeTopicListItem,HomeTopicListItemLeft,HomeTopicListItemLeftTitle,HomeTopicListItemLeftCon,
     HomeTopicListItemLeftSort,HomeTopicListItemLeftSortEvery,HomeTopicListItemRight,
-    HotTopicList,HomeRight} from './style.js'
+    HotTopicList,HomeRight,HomeHot} from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
 
@@ -33,13 +33,19 @@ class Home extends React.Component{
                                                 <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe602;</i>{item.like}</HomeTopicListItemLeftSortEvery>
                                             </HomeTopicListItemLeftSort>
                                         </HomeTopicListItemLeft>
-                                        <HomeTopicListItemRight><img src={item.pic} style={{'float':'right','height':'100%'}}/></HomeTopicListItemRight>
+                                        <HomeTopicListItemRight><img src={item.pic} style={{'float':'right','height':'100%','width':'100%'}}/></HomeTopicListItemRight>
                                     </HomeTopicListItem>
                                 )
                             })}
                         </HomeTopicList>
                     </HomeLeft>
-                    <HomeRight></HomeRight>
+                    <HomeRight>
+                        <HomeHot className="seven"></HomeHot>
+                        <HomeHot className="thirty"></HomeHot>
+                        <HomeHot className="serial"></HomeHot>
+                        <HomeHot className="copyright"></HomeHot>
+                        <HomeHot className="school"></HomeHot>
+                    </HomeRight>
                     
                 </HomeCon>
                 
