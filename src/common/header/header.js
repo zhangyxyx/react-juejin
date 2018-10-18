@@ -1,5 +1,9 @@
 import React from 'react'
-import {HeaderWrapper,HeaderLeft,HeaderMsg,HeaderMsgList,HeaderCon,HeaderConLeft,HeaderRight,HeaderRightUser,HeaderInput,HeaderSearch} from './style.js'
+import {
+    HeaderWrapper,HeaderLeft,HeaderMsg,HeaderMsgList,
+    HeaderCon,HeaderConLeft,HeaderRight,HeaderRightUser,
+    HeaderInput,HeaderSearch,HeaderSearchBtn,
+    HeaderWrite} from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
 import Item from 'antd/lib/list/Item';
@@ -9,14 +13,15 @@ class Header extends React.Component{
         super(props);
         this.state={
             headerlist:[
-                {id:'1',val:'发现',pic:'\ue9aa'},
-                {id:'2',val:'关注',pic:'\ue609'},
-                {id:'3',val:'消息',pic:'\ue634'}
+                {id:'1',val:'首页',pic:'\ue9aa'},
+                {id:'2',val:'沸点',pic:'\ue609'},
+                {id:'3',val:'小册',pic:'\ue634'},
+                {id:'4',val:'开源库',pic:'\ue634'},
+                {id:'5',val:'活动',pic:'\ue634'},
             ],
         }
     }
     showMessageList(){
-        console.log(this.props.message)
         if(this.props.message===true){
             return (
                 <HeaderMsg>
@@ -35,7 +40,7 @@ class Header extends React.Component{
             <div>
                 <HeaderWrapper>
                     <HeaderLeft >
-                        <img src="//cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png" style={{"width":"100%","height":"100%"}}/>
+                        <img src="https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" style={{"width":"100px","height":"60px","marginTop":"0px"}}/>
                     </HeaderLeft>
                     <HeaderCon>
                         {
@@ -44,26 +49,22 @@ class Header extends React.Component{
                                 key={index} 
                                 onMouseOver={()=>changeMessageShow(item.val)} 
                                 onMouseOut={()=>changeMessageHide(item.val)}>
-                                
-                                <i className="iconfont" style={{"color":"#ea6f5a",'fontSize':'22px'}}>{item.pic}</i>
                                 {item.val}
                                 </HeaderConLeft>
                             })
                         }
                         {this.showMessageList()}
-                        <HeaderInput onFocus={this.props.handelInputFocused} onBlur={this.props.handleInputBlur}/>
-                        <HeaderSearch className={this.props.focused?'focused':''}><i className="iconfont">&#xe619;</i></HeaderSearch>
-                        
+                        <HeaderSearch>
+                            <HeaderInput onFocus={this.props.handelInputFocused} onBlur={this.props.handleInputBlur}/>
+                            <HeaderSearchBtn className={this.props.focused?'focused':''}><i className="iconfont">&#xe619;</i></HeaderSearchBtn>
+                        </HeaderSearch>
+                        <HeaderWrite>写文章</HeaderWrite>
                         <HeaderRightUser>
                             <img src="http://upload.jianshu.io/users/upload_avatars/5256327/ffff0f51-d286-47fe-9e5c-a513372cb626.png?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120" style={{"width":"100%","height":"100%"}}/>
                         </HeaderRightUser>
-                        <i className="iconfont" style={{"float":"right"}}>&#xe607;</i>
-                        {/* <img src="" style={{"width":"100%","height":"100%"}}/> */}
+                        <i className="iconfont" style={{"float":"right","fontSize":"25px","marginTop":"10px"}}>&#xe69b;</i>
                     </HeaderCon>
-                    <HeaderRight>
-                        <i className="iconfont">&#xe600;</i>
-                        写文章
-                    </HeaderRight>
+                    
                 </HeaderWrapper>
             </div>
         )

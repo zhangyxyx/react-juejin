@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 export const HeaderWrapper=styled.div`
-    width:100%;
+    width:80%;
+    min-width:900px;
     height:56px;
-    border-bottom:1px solid #efefef
+    border-bottom:1px solid #efefef;
+    margin:0px auto;
 `
 export const HeaderLeft=styled.div`
     width:10%;
@@ -12,11 +14,11 @@ export const HeaderLeft=styled.div`
 
 `
 export const HeaderCon=styled.div`
-    width:80%;
+    width:90%;
     height:56px;
     line-height:30px;
     float:left;
-
+    color:#71777c
 `
 export const HeaderMsg=styled.div`
     width:100px;
@@ -65,25 +67,42 @@ export const HeaderRightUser=styled.div`
     margin:10px 10px;
     border:1px solid #333;
 `
-
-export const HeaderInput=styled.input.attrs({"placeholder":"搜索"})`
-    width:100px;
-    height:30px;
-    margin-top:15px;
+export const HeaderSearch=styled.div`
+    width:178px;
+    height:34px;
+    float:left;
+    position:relative;
+`
+export const HeaderInput=styled.input.attrs({"placeholder":"搜索掘金"})`
+    width:156px;
+    height:34px;
+    margin-top:10px;
     border:1px solid #efefef;
     background:#efefef;
-    float:left;
-    border-radius:10px;
     padding:0px 10px;
+
 `
-export const HeaderSearch=styled.div`
+export const HeaderSearchBtn=styled.div`
     width:20px;
     height:25px;
     margin-top:15px;
     background:red;
     float:left;
+    position:absolute;
+    right:0px;
+    top:0px;
     &.focused{
         width:20px;
         background:green;
     }
+`
+export const HeaderWrite=styled.div`
+    width:108px;
+    height:32px;
+    background:#007fff;
+    color:#fff;
+    float:left;
+    text-align:center;
+    margin-top:10px;
+    margin-left:20px;
 `

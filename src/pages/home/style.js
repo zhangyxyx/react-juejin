@@ -1,15 +1,64 @@
 import styled from 'styled-components'
 
 export const HomeCon=styled.div`
+    min-width:980px;
     width:80%;
-    margin:20px auto;
-    overflow:auto;
-`   
-export const HomeLeft=styled.div`
-    width:60%;
-    float:left;
+    margin:0px auto;
 
+` 
+//header
+export const HomeHeader=styled.div`
+    width:100%;
+    height:45px;
+    line-height:45px;
+    border-bottom:1px solid #ccc;
+` 
+export const HomeHeaderItem=styled.div`
+    float:left;
+    padding:0px 10px;
+    color:#71777c;
+    font-size:13px;
+    cursor:pointer;
+` 
+//左边
+export const HomeLeftHeader=styled.div`
+    width:100%;
+    height:50px;
+    line-height:50px;
+    border:1px solid #efefef;
+    color:#007fff;
+    margin-bottom:10px;
+` 
+export const HomeLeftHeaderItem=styled.div`
+    float:left;
+    padding:0px 10px;
+    color:#71777c;
+    font-size:13px;
+    color:#007fff;
+    margin:0px 10px;
+`
+
+export const HomeLeft=styled.div`
+    margin-top:10px;
+    width:70%;
+    float:left;
 `   
+export const HomeLeftSort=styled.div`
+    width:100%;
+    height:46px;
+    line-height:46px;
+    border-bottom:1px solid #efefef;
+
+`  
+export const HomeLeftSortItem=styled.div`
+    float:left;
+    padding:0px 10px;
+    color:#71777c;
+    font-size:13px;
+    color:#007fff;
+    margin:0px 10px;
+`  
+
 export const HomeConBanner=styled.div`
     width:100%;
     height:270px;
@@ -34,9 +83,9 @@ export const HomeTopicList=styled.div`
 `
 export const HomeTopicListItem=styled.div`
     width:100%;
+    height:116px;
     padding:10px 0px;
     border-bottom:1px solid #f0f0f0;
-    overflow:auto;
     min-height:80px;
 `
 export const HomeTopicListItemLeft=styled.div`
@@ -44,35 +93,44 @@ export const HomeTopicListItemLeft=styled.div`
     height:100%;
     float:left;
 `
-export const HomeTopicListItemLeftTitle=styled.h3`
+export const HomeTopicListItemLeftTitle=styled.div`
     width:100%;
+    height:16px;
     margin:0px 0px 5px 0px;
 `
-export const HomeTopicListItemLeftCon=styled.div`
-    width:100%;
+export const HomeTopicListItemLeftTitleEvery=styled.div`
+    font-size:13px;
     color:#ccc;
-    line-height:20px;
+    margin:0px 5px;
+    float:left;
+`
+export const HomeTopicListItemLeftCon=styled.h4`
+    width:100%;
+    height:22px;
+    overflow:hidden;
     word-break:break-all; 
 `
 export const HomeTopicListItemLeftSort=styled.div`
     width:100%;
-    height:20px;
+    height:24px;
     color:#ccc;
     padding:5px 0px;
 `
 export const HomeTopicListItemLeftSortEvery=styled.div`
-    margin:0px 10px;
     float:left;
+    border:1px solid #ccc;
+    padding:1px 10px;
+    font-size:13px;
 `
 export const HomeTopicListItemRight=styled.div`
-    width:20%;
-    height:100%;
-    float:left;
+    width:80px;
+    height:80px;
+    float:right;
 `
 //====结束
 export const HomeRight=styled.div`
-    width:35%;
-    margin-left:5%;
+    width:28%;
+    margin-left:2%;
     float:left;
 
 `  
@@ -106,7 +164,8 @@ export const HomeUserTitle=styled.div`
     width:100%;
     height:20px;
     font-size:14px;
-    color:#969696
+    color:#969696;
+    border:1px solid #efefef
 `
 export const HomeUserTitleLeft=styled.div`
     height:20px;
@@ -165,6 +224,23 @@ export const HomeUserAll=styled.div`
 `
 
 //结束
+//小册
+export const HomeBookletItem=styled.div`
+    width:100%;
+    height:102px;
+    padding:10px;
+`
+export const HomeBookletItemLeft=styled.div`
+    width:52px;
+    height:72px;
+    float:left;
+`
+export const HomeBookletItemRight=styled.div`
+    width:148px;
+    height:72px;
+    float:left;
+`
+
 
 
 

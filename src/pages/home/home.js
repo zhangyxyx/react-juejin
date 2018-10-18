@@ -1,12 +1,15 @@
 import React from 'react'
 import Topic from './components/Topic.js'
+import {Link} from 'react-router-dom'
 import {
-    HomeCon,HomeLeft,HomeConBanner,HotTopic,
+    HomeCon,HomeLeft,
     HomeTopicList,HomeTopicListItem,HomeTopicListItemLeft,HomeTopicListItemLeftTitle,HomeTopicListItemLeftCon,
     HomeTopicListItemLeftSort,HomeTopicListItemLeftSortEvery,HomeTopicListItemRight,
-    HotTopicList,HomeRight,HomeHot,
+    HomeRight,HomeHot,
     HomeUser,HomeUserList,HomeUserListLeft,HomeUserListCon,HomeUserListConTop,HomeUserListConBottom,HomeUserListRight,
-    HomeUserTitle,HomeUserTitleLeft,HomeUserTitleRight,HomeUserAll
+    HomeUserTitle,
+    HomeHeader,HomeHeaderItem,HomeLeftHeader,HomeLeftHeaderItem,HomeLeftSort,HomeLeftSortItem,HomeTopicListItemLeftTitleEvery,
+    
 } from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
@@ -16,24 +19,45 @@ class Home extends React.Component{
         return(
             <div>
                 <HomeCon>
+                    <HomeHeader>
+                        {
+                            this.props.homeheader.map((item)=>{
+                                var id=item.id;
+                                return <HomeHeaderItem onClick={()=>this.props.clickChangeList(id)} key={item.id}><Link to={{pathname:'/home/'+id}}>{item.val}</Link></HomeHeaderItem>
+                            })
+                        }
+                        <HomeHeaderItem>标签管理</HomeHeaderItem>
+                    </HomeHeader>
                     <HomeLeft>
-                        <HomeConBanner><img src='http://upload.jianshu.io/admin_banners/web_images/4448/d9a0fd8f0622d2323161b68d2123c7f28837d28f.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540' style={{'width':'100%','height':"100%"}}/></HomeConBanner>
-                        <HotTopic>
-                            {this.props.topic.map((item)=>{
-                                return <HotTopicList key={item.id}><img src={item.pic} style={{'float':'left','height':'100%'}}/><span style={{'margin':'0px 5px'}}>{item.val}</span></HotTopicList>
-                            })}
-                        </HotTopic>
+                        <HomeLeftHeader>
+                            <img src="https://avatars.githubusercontent.com/u/17818212?v=3" style={{'height':"100%","float":"left"}}/>
+                            <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe605;</i>发沸点</HomeLeftHeaderItem>
+                            <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe697;</i>写文章</HomeLeftHeaderItem>
+                            <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe60b;</i>分享链接</HomeLeftHeaderItem>
+                            <HomeHeaderItem>草稿</HomeHeaderItem>
+                        </HomeLeftHeader>
+                        <HomeLeftSort>
+                            {
+                                this.props.sortleft.map((item)=>{
+                                    return <HomeLeftSortItem key={item.id}>{item.val}</HomeLeftSortItem>
+                                })
+                            }
+                        </HomeLeftSort>
                         <HomeTopicList>
                             {this.props.list.map((item)=>{
                                 return (
                                     <HomeTopicListItem key={item.id}>
                                         <HomeTopicListItemLeft>
-                                            <HomeTopicListItemLeftTitle>{item.title}</HomeTopicListItemLeftTitle>
-                                            <HomeTopicListItemLeftCon>{item.con}</HomeTopicListItemLeftCon>
+                                            <HomeTopicListItemLeftTitle>
+                                                <HomeTopicListItemLeftTitleEvery>专栏</HomeTopicListItemLeftTitleEvery>
+                                                <HomeTopicListItemLeftTitleEvery>{item.user}</HomeTopicListItemLeftTitleEvery>
+                                                <HomeTopicListItemLeftTitleEvery>4分钟前</HomeTopicListItemLeftTitleEvery>
+                                                <HomeTopicListItemLeftTitleEvery>html/前端</HomeTopicListItemLeftTitleEvery>
+                                            </HomeTopicListItemLeftTitle>
+                                            <HomeTopicListItemLeftCon>{item.title}</HomeTopicListItemLeftCon>
                                             <HomeTopicListItemLeftSort>
-                                                <HomeTopicListItemLeftSortEvery>{item.user}</HomeTopicListItemLeftSortEvery>
-                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe60e;</i>{item.common}</HomeTopicListItemLeftSortEvery>
-                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe602;</i>{item.like}</HomeTopicListItemLeftSortEvery>
+                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe601;</i>{item.common}</HomeTopicListItemLeftSortEvery>
+                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe623;</i>{item.like}</HomeTopicListItemLeftSortEvery>
                                             </HomeTopicListItemLeftSort>
                                         </HomeTopicListItemLeft>
                                         <HomeTopicListItemRight><img src={item.pic} style={{'float':'right','height':'100%','width':'100%'}}/></HomeTopicListItemRight>
@@ -43,15 +67,11 @@ class Home extends React.Component{
                         </HomeTopicList>
                     </HomeLeft>
                     <HomeRight>
-                        <HomeHot className="seven"></HomeHot>
-                        <HomeHot className="thirty"></HomeHot>
-                        <HomeHot className="serial"></HomeHot>
-                        <HomeHot className="copyright"></HomeHot>
-                        <HomeHot className="school"></HomeHot>
+                        <HomeHot></HomeHot>
+                        <HomeHot></HomeHot>
                         <HomeUser>
                             <HomeUserTitle>
-                                <HomeUserTitleLeft>关注作者</HomeUserTitleLeft>
-                                <HomeUserTitleRight><i className="iconfont">&#xe603;</i>换一批</HomeUserTitleRight>
+                                你可能感兴趣的人
                             </HomeUserTitle>
                             {
                                 this.props.user.map((item)=>{
@@ -62,12 +82,10 @@ class Home extends React.Component{
                                             <HomeUserListConTop>{item.val}</HomeUserListConTop>
                                             <HomeUserListConBottom>写了{}字 · 8.7k喜欢</HomeUserListConBottom>
                                         </HomeUserListCon>
-                                        <HomeUserListRight><i className="iconfont">&#xe608;</i>关注</HomeUserListRight>
                                         </HomeUserList>
                                     )
                                 })
                             }
-                            <HomeUserAll>查看全部<i className="iconfont">&#xe65c;</i></HomeUserAll>
                         </HomeUser>
                     </HomeRight>
                     
@@ -82,6 +100,10 @@ class Home extends React.Component{
 }
 const mapStateToProps=(state)=>{
     return{
+        homeheader:state.get('home').get('homeheader'),
+        sortleft:state.get('home').get('sortleft'),
+        sortright:state.get('home').get('sortright'),
+        
         topic:state.get('home').get('topic'),
         list:state.get('home').get('list'),
         user:state.get('home').get('user')
@@ -90,10 +112,18 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
     return{
         showTopicList(){
+            dispatch(actionCreators.homeheader())
+            dispatch(actionCreators.sortleft())
+            
             dispatch(actionCreators.showtopiclist())
-            dispatch(actionCreators.showlist())
+            //dispatch(actionCreators.showlist())
+            dispatch(actionCreators.getshowlist('1'))
             dispatch(actionCreators.showuserlist())
         },
+        clickChangeList(id){
+            console.log(1)
+            dispatch(actionCreators.getshowlist(id))
+        }
         
     }
 }
