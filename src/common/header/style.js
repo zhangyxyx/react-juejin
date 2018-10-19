@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 export const HeaderWrapper=styled.div`
-    width:80%;
-    min-width:900px;
+    width:100%;
     height:56px;
-    border-bottom:1px solid #efefef;
+
     margin:0px auto;
+    &.HeaderWrapper{
+        width:80%;
+        min-width:900px;
+    }
 `
 export const HeaderLeft=styled.div`
     width:10%;

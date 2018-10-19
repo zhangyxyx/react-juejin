@@ -1,17 +1,25 @@
 import styled from 'styled-components'
 
 export const HomeCon=styled.div`
-    min-width:980px;
-    width:80%;
-    margin:0px auto;
+   
 
 ` 
 //header
 export const HomeHeader=styled.div`
     width:100%;
-    height:45px;
-    line-height:45px;
     border-bottom:1px solid #ccc;
+    &.homeHeader{
+        width:80%;
+        margin:0 auto;
+        height:45px;
+        line-height:45px;
+    }
+    &.homeCon{
+        width:80%;
+        margin:0 auto;
+        height:100%;
+        overflow:auto;
+    }
 ` 
 export const HomeHeaderItem=styled.div`
     float:left;
@@ -55,7 +63,7 @@ export const HomeLeftSortItem=styled.div`
     padding:0px 10px;
     color:#71777c;
     font-size:13px;
-    color:#007fff;
+    color:#909090;
     margin:0px 10px;
 `  
 

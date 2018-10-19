@@ -20,6 +20,7 @@ class Home extends React.Component{
             <div>
                 <HomeCon>
                     <HomeHeader>
+                        <HomeHeader className="homeHeader">
                         {
                             this.props.homeheader.map((item)=>{
                                 var id=item.id;
@@ -27,7 +28,9 @@ class Home extends React.Component{
                             })
                         }
                         <HomeHeaderItem>标签管理</HomeHeaderItem>
+                        </HomeHeader>
                     </HomeHeader>
+                    <HomeHeader className='homeCon'>
                     <HomeLeft>
                         <HomeLeftHeader>
                             <img src="https://avatars.githubusercontent.com/u/17818212?v=3" style={{'height':"100%","float":"left"}}/>
@@ -38,8 +41,13 @@ class Home extends React.Component{
                         </HomeLeftHeader>
                         <HomeLeftSort>
                             {
-                                this.props.sortleft.map((item)=>{
-                                    return <HomeLeftSortItem key={item.id}>{item.val}</HomeLeftSortItem>
+                                this.props.sortleft.map((item,index)=>{
+                                    if(index<=2){
+                                        return <HomeLeftSortItem key={item.id}>{item.val}</HomeLeftSortItem>
+                                    }else {
+                                        return <HomeLeftSortItem key={item.id} style={{"float":"right"}}>{item.val}</HomeLeftSortItem>
+                                    }
+                                    
                                 })
                             }
                         </HomeLeftSort>
@@ -88,7 +96,7 @@ class Home extends React.Component{
                             }
                         </HomeUser>
                     </HomeRight>
-                    
+                    </HomeHeader>
                 </HomeCon>
                 
             </div>

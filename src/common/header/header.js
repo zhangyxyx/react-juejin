@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {
     HeaderWrapper,HeaderLeft,HeaderMsg,HeaderMsgList,
     HeaderCon,HeaderConLeft,HeaderRight,HeaderRightUser,
@@ -8,16 +9,17 @@ import {connect} from 'react-redux'
 import {actionCreators} from './store'
 import Item from 'antd/lib/list/Item';
 
+
 class Header extends React.Component{
     constructor(props){
         super(props);
         this.state={
             headerlist:[
-                {id:'1',val:'首页',pic:'\ue9aa'},
-                {id:'2',val:'沸点',pic:'\ue609'},
-                {id:'3',val:'小册',pic:'\ue634'},
-                {id:'4',val:'开源库',pic:'\ue634'},
-                {id:'5',val:'活动',pic:'\ue634'},
+                {id:'1',val:'首页',mark:'home',pic:'\ue9aa'},
+                {id:'2',val:'沸点',mark:'boil',pic:'\ue609'},
+                {id:'3',val:'小册',mark:'boil',pic:'\ue634'},
+                {id:'4',val:'开源库',mark:'boil',pic:'\ue634'},
+                {id:'5',val:'活动',mark:'boil',pic:'\ue634'},
             ],
         }
     }
@@ -39,17 +41,16 @@ class Header extends React.Component{
         return(
             <div>
                 <HeaderWrapper>
+                    <HeaderWrapper className='HeaderWrapper'>
                     <HeaderLeft >
                         <img src="https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg" style={{"width":"100px","height":"60px","marginTop":"0px"}}/>
                     </HeaderLeft>
                     <HeaderCon>
                         {
                             this.state.headerlist.map((item,index)=>{
-                                return <HeaderConLeft 
-                                key={index} 
-                                onMouseOver={()=>changeMessageShow(item.val)} 
-                                onMouseOut={()=>changeMessageHide(item.val)}>
-                                {item.val}
+                                var id=item.id;
+                                return <HeaderConLeft key={index}>
+                                <Link to={{pathname:'/'+item.mark}}>{item.val}</Link>
                                 </HeaderConLeft>
                             })
                         }
@@ -64,7 +65,7 @@ class Header extends React.Component{
                         </HeaderRightUser>
                         <i className="iconfont" style={{"float":"right","fontSize":"25px","marginTop":"10px"}}>&#xe69b;</i>
                     </HeaderCon>
-                    
+                    </HeaderWrapper>
                 </HeaderWrapper>
             </div>
         )
