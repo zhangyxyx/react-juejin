@@ -7,18 +7,27 @@ export const HomeCon=styled.div`
 //header
 export const HomeHeader=styled.div`
     width:100%;
+    
     border-bottom:1px solid #ccc;
+    background-color:#fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
     &.homeHeader{
+        max-width:960px;
         width:80%;
         margin:0 auto;
         height:45px;
         line-height:45px;
+        border-bottom:none;
+        
     }
     &.homeCon{
         width:80%;
         margin:0 auto;
+        max-width:960px;
         height:100%;
         overflow:auto;
+        border-bottom:none;
+        background-color:#efefef;
     }
 ` 
 export const HomeHeaderItem=styled.div`
@@ -36,6 +45,7 @@ export const HomeLeftHeader=styled.div`
     border:1px solid #efefef;
     color:#007fff;
     margin-bottom:10px;
+    background:#fff;
 ` 
 export const HomeLeftHeaderItem=styled.div`
     float:left;
@@ -56,7 +66,8 @@ export const HomeLeftSort=styled.div`
     height:46px;
     line-height:46px;
     border-bottom:1px solid #efefef;
-
+    background-color:#fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
 `  
 export const HomeLeftSortItem=styled.div`
     float:left;
@@ -87,7 +98,10 @@ export const HotTopicList=styled.div`
 ` 
 //列表
 export const HomeTopicList=styled.div`
-    width:100%;
+    width:calc(100% - 20px);
+    background-color:#fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    padding:0px 10px
 `
 export const HomeTopicListItem=styled.div`
     width:100%;
@@ -168,12 +182,15 @@ export const HomeHot=styled.div`
 `  
 //用户列表
 export const HomeUserTitle=styled.div`
+    padding:0px 10px;
     margin-top:20px;
     width:100%;
-    height:20px;
+    height:42px;
+    line-height:42px;
     font-size:14px;
     color:#969696;
-    border:1px solid #efefef
+    border:1px solid #efefef;
+
 `
 export const HomeUserTitleLeft=styled.div`
     height:20px;
@@ -185,7 +202,10 @@ export const HomeUserTitleRight=styled.div`
 `
 
 export const HomeUser=styled.div`
-    width:100%
+    width:100%;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    background-color:#fff;
+    padding:0px 10px;
 `
 export const HomeUserList=styled.div`
     width:100%;

@@ -9,6 +9,7 @@ export const BoilText=styled.div`
     width:100%;    
     height:165px;
     border:1px solid #efefef;
+    background-color:#fff;
 ` 
 export const BoilTextArea=styled.textarea`
     width:90%;    
@@ -44,6 +45,9 @@ export const BoilHeader=styled.div`
     height:62px;
     line-height:62px;
     border-bottom:1px solid #efefef;
+    background-color:#fff;
+    margin:10px 0px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
 `
 export const BoilHeaderItem=styled.div`
     width:50%;   
@@ -53,7 +57,8 @@ export const BoilHeaderItem=styled.div`
 //Boil列表
 export const BoilList=styled.div`
     width:100%;
-    
+    background-color:#fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
 `
 export const BoilConItem=styled.div`
     width:100%;
@@ -100,6 +105,8 @@ export const BoilConBottomItem=styled.div`
 export const BoilCon=styled.div`
    width:80%;
    margin:0 auto;
+   overflow:hidden
+   max-width:960px;
 `
 //left
 export const BoilLeft=styled.div`
@@ -112,14 +119,20 @@ export const BoilRight=styled.div`
     width:28%;
     margin-left:2%;
     float:left;
+    margin-top:10px;
 `
 export const BoilRightTop1=styled.div`
     width:100%;
     height:93px;
+    background-color:#fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
 `
 export const BoilRightTop2=styled.div`
     width:100%;
     height:67px;
+    background-color:#fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    margin-bottom:10px;
 `
 export const BoilRightTop2Every=styled.div`
     width:33%;
@@ -134,6 +147,8 @@ export const BoilRightTop2Every=styled.div`
 export const BoilRightTopic=styled.div`
     width:100%;
     min-height:113px;
+    background-color:#fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
 `
 export const BoilRightTopicTitle=styled.div`
     width:100%;

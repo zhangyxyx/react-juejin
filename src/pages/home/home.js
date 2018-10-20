@@ -17,7 +17,7 @@ import {actionCreators} from './store'
 class Home extends React.Component{
     render(){
         return(
-            <div>
+            <div style={{"backgroundColor":"#efefef"}}>
                 <HomeCon>
                     <HomeHeader>
                         <HomeHeader className="homeHeader">

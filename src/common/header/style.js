@@ -5,8 +5,8 @@ export const HeaderWrapper=styled.div`
 
     margin:0px auto;
     &.HeaderWrapper{
-        width:80%;
-        min-width:900px;
+        width:100%;
+        max-width:960px;
     }
 `
 export const HeaderLeft=styled.div`

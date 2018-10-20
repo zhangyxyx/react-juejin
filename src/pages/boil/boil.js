@@ -15,7 +15,7 @@ import {actionCreators} from './store'
 class Boil extends React.Component{
     render(){
         return(
-            <div>
+            <div style={{"backgroundColor":"#efefef"}}>
                 <BoilCon>
                     <BoilLeft>
                         <BoilText>

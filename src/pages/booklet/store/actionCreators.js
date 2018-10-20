@@ -3,17 +3,12 @@ import axios from 'axios'
 export const homeheader=(data)=>({
     type:constants.HOME_HEADER,
     data:[
-        {id:'1',val:'我的关注',},
-        {id:'2',val:'Android',},
-        {id:'3',val:'前端',},
-        {id:'4',val:'iOS',},
-        {id:'5',val:'后端',},
-        {id:'6',val:'设计',},
-        {id:'7',val:'产品',},
-        {id:'8',val:'工具资源',},
-        {id:'9',val:'阅读',},
-        {id:'10',val:'人工智能',},
-        {id:'11',val:'运维',},
+        {id:'1',val:'全部',},
+        {id:'2',val:'前端',},
+        {id:'3',val:'后端',},
+        {id:'4',val:'移动开发',},
+        {id:'5',val:'区块链',},
+        {id:'6',val:'通用',},
     ]
 }) 
 export const sortleft=(data)=>({
@@ -46,12 +41,8 @@ export const showlist=(data)=>({
 })
 export const getshowlist=(id)=>{
     return (dispatch) => {
-        axios.get('/juejin/question').then((res)=>{
-            console.log(res)
-            console.log(res.data)
-
-            var str=eval('('+ res.data +')')
-            const result=str.data;
+        axios.get('/api/header_list_'+id+'.json').then((res)=>{
+            const result=res.data.data;
             console.log(result)
             dispatch(showlist(result))
         })

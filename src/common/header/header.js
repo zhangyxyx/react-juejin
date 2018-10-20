@@ -17,7 +17,7 @@ class Header extends React.Component{
             headerlist:[
                 {id:'1',val:'首页',mark:'home',pic:'\ue9aa'},
                 {id:'2',val:'沸点',mark:'boil',pic:'\ue609'},
-                {id:'3',val:'小册',mark:'boil',pic:'\ue634'},
+                {id:'3',val:'小册',mark:'booklet',pic:'\ue634'},
                 {id:'4',val:'开源库',mark:'boil',pic:'\ue634'},
                 {id:'5',val:'活动',mark:'boil',pic:'\ue634'},
             ],
@@ -50,7 +50,7 @@ class Header extends React.Component{
                             this.state.headerlist.map((item,index)=>{
                                 var id=item.id;
                                 return <HeaderConLeft key={index}>
-                                <Link to={{pathname:'/'+item.mark}}>{item.val}</Link>
+                                <Link to={{pathname:'/juejin/'+item.mark}}>{item.val}</Link>
                                 </HeaderConLeft>
                             })
                         }
