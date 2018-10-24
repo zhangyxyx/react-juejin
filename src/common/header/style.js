@@ -7,6 +7,7 @@ export const HeaderWrapper=styled.div`
     &.HeaderWrapper{
         width:100%;
         max-width:960px;
+        min-width:870px;
     }
 `
 export const HeaderLeft=styled.div`
@@ -48,6 +49,13 @@ export const HeaderConLeft=styled.div`
     line-height:56px;
     float:left;
     text-align:center;
+    a{
+        &.headerActive{
+            color:#007fff
+        }
+        
+    }
+    
 
 `
 export const HeaderRight=styled.div`

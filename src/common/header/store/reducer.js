@@ -4,7 +4,8 @@ import {fromJS} from 'immutable'
 const defaultState=fromJS({
     focused:false,
     message:false,
-    messagetwolist:[]
+    messagetwolist:[],
+    clickHeader:'1',
 });
 export default (state=defaultState,action)=>{
     if(action.type===constants.SEARCH_FOCUS){
@@ -21,6 +22,10 @@ export default (state=defaultState,action)=>{
     }
     if(action.type===constants.SHOW_MESSAGE_LIST){
         return state.set('messagetwolist',action.data)
+    }
+    if(action.type===constants.CLICK_HEADER_ACTIVE){
+        console.log(action.data)
+        return state.set('clickHeader',action.data)
     }
     return state
 }

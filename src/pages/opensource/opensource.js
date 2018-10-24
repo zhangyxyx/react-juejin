@@ -9,6 +9,7 @@ import {
     HomeUser,HomeUserList,HomeUserListLeft,HomeUserListCon,HomeUserListConTop,HomeUserListConBottom,HomeUserListRight,
     HomeUserTitle,
     HomeHeader,HomeHeaderItem,HomeLeftHeader,HomeLeftHeaderItem,HomeLeftSort,HomeLeftSortItem,HomeTopicListItemLeftTitleEvery,
+    OpenSourceList,OpenSourceListItem,OpenSourceListItemLeft,OpenSourceListItemRight,OpenSourceListItemRightP,OpenSourceListItemRightPSpan,
     
 } from './style.js'
 import {connect} from 'react-redux'
@@ -20,27 +21,12 @@ class Home extends React.Component{
             <div style={{"backgroundColor":"#efefef"}}>
                 <HomeCon>
                     <HomeHeader>
-                        <HomeHeader className="homeHeader">
-                        {
-                            this.props.homeheader.map((item)=>{
-                                var id=item.id;
-                                return <HomeHeaderItem className={this.props.clickHeader===item.id?'headerActive':''} 
-                                    onClick={()=>this.props.clickChangeList(id)} key={item.id}>
-                                <Link to={{pathname:'/juejin/home/'+id}}>{item.val}</Link>
-                                </HomeHeaderItem>
-                            })
-                        }
-                        <HomeHeaderItem>标签管理</HomeHeaderItem>
-                        </HomeHeader>
+                        
                     </HomeHeader>
                     <HomeHeader className='homeCon'>
                     <HomeLeft>
                         <HomeLeftHeader>
-                            <img src="https://avatars.githubusercontent.com/u/17818212?v=3" style={{'height':"100%","float":"left"}}/>
-                            <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe605;</i>发沸点</HomeLeftHeaderItem>
-                            <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe697;</i>写文章</HomeLeftHeaderItem>
-                            <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe60b;</i>分享链接</HomeLeftHeaderItem>
-                            <HomeHeaderItem>草稿</HomeHeaderItem>
+                           
                         </HomeLeftHeader>
                         <HomeLeftSort>
                             {
@@ -54,28 +40,24 @@ class Home extends React.Component{
                                 })
                             }
                         </HomeLeftSort>
-                        <HomeTopicList>
+                        <OpenSourceList>
                             {this.props.list.map((item)=>{
                                 return (
-                                    <HomeTopicListItem key={item.id}>
-                                        <HomeTopicListItemLeft>
-                                            <HomeTopicListItemLeftTitle>
-                                                <HomeTopicListItemLeftTitleEvery>专栏</HomeTopicListItemLeftTitleEvery>
-                                                <HomeTopicListItemLeftTitleEvery>{item.user}</HomeTopicListItemLeftTitleEvery>
-                                                <HomeTopicListItemLeftTitleEvery>4分钟前</HomeTopicListItemLeftTitleEvery>
-                                                <HomeTopicListItemLeftTitleEvery>html/前端</HomeTopicListItemLeftTitleEvery>
-                                            </HomeTopicListItemLeftTitle>
-                                            <HomeTopicListItemLeftCon>{item.title}</HomeTopicListItemLeftCon>
-                                            <HomeTopicListItemLeftSort>
-                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe601;</i>{item.common}</HomeTopicListItemLeftSortEvery>
-                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe623;</i>{item.like}</HomeTopicListItemLeftSortEvery>
-                                            </HomeTopicListItemLeftSort>
-                                        </HomeTopicListItemLeft>
-                                        <HomeTopicListItemRight><img src={item.pic} style={{'float':'right','height':'100%','width':'100%'}}/></HomeTopicListItemRight>
-                                    </HomeTopicListItem>
+                                   <OpenSourceListItem key={item.id}>
+                                       <OpenSourceListItemLeft><img src="./././static/image/opensource/1.png"/></OpenSourceListItemLeft>
+                                       <OpenSourceListItemRight>
+                                            <OpenSourceListItemRightP>{item.val}</OpenSourceListItemRightP>
+                                            <OpenSourceListItemRightP>{item.con}</OpenSourceListItemRightP>
+                                           <OpenSourceListItemRightP>
+                                               <OpenSourceListItemRightPSpan>{item.sort}</OpenSourceListItemRightPSpan>
+                                               <OpenSourceListItemRightPSpan><i className="iconfont" style={{"width":"10px"}}>&#xe66a;</i>{item.like}</OpenSourceListItemRightPSpan>
+                                               <OpenSourceListItemRightPSpan><i className="iconfont" style={{"width":"10px"}}>&#xe67f;</i>{item.share}</OpenSourceListItemRightPSpan>
+                                           </OpenSourceListItemRightP>
+                                       </OpenSourceListItemRight>
+                                   </OpenSourceListItem>
                                 )
                             })}
-                        </HomeTopicList>
+                        </OpenSourceList>
                     </HomeLeft>
                     <HomeRight>
                         <HomeHot></HomeHot>
@@ -117,8 +99,7 @@ const mapStateToProps=(state)=>{
         
         topic:state.get('home').get('topic'),
         list:state.get('home').get('list'),
-        user:state.get('home').get('user'),
-        clickHeader:state.get('home').get('clickHeader'),
+        user:state.get('home').get('user')
     }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -133,9 +114,8 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch(actionCreators.showuserlist())
         },
         clickChangeList(id){
-            console.log(id)
-            dispatch(actionCreators.headerActive(id))
-            //dispatch(actionCreators.getshowlist(id))
+            console.log(1)
+            dispatch(actionCreators.getshowlist(id))
         }
         
     }

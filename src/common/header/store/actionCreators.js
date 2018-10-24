@@ -32,3 +32,7 @@ export const getmessagelist=()=>{
         dispatch(showmessagelist(list))
     }
 }
+export const headerActive=(data)=>({
+    type:constants.CLICK_HEADER_ACTIVE,
+    data:data
+})

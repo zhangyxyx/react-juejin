@@ -18,7 +18,7 @@ class Header extends React.Component{
                 {id:'1',val:'首页',mark:'home',pic:'\ue9aa'},
                 {id:'2',val:'沸点',mark:'boil',pic:'\ue609'},
                 {id:'3',val:'小册',mark:'booklet',pic:'\ue634'},
-                {id:'4',val:'开源库',mark:'boil',pic:'\ue634'},
+                {id:'4',val:'开源库',mark:'opensource',pic:'\ue634'},
                 {id:'5',val:'活动',mark:'boil',pic:'\ue634'},
             ],
         }
@@ -49,15 +49,15 @@ class Header extends React.Component{
                         {
                             this.state.headerlist.map((item,index)=>{
                                 var id=item.id;
-                                return <HeaderConLeft key={index}>
-                                <Link to={{pathname:'/juejin/'+item.mark}}>{item.val}</Link>
+                                return <HeaderConLeft  key={item.id}>
+                                <Link to={{pathname:'/juejin/'+item.mark}} className={this.props.clickHeader===item.id?'headerActive':''} onClick={()=>this.props.clickHeaderActive(item.id)}>{item.val}</Link>
                                 </HeaderConLeft>
                             })
                         }
                         {this.showMessageList()}
                         <HeaderSearch>
                             <HeaderInput onFocus={this.props.handelInputFocused} onBlur={this.props.handleInputBlur}/>
-                            <HeaderSearchBtn className={this.props.focused?'focused':''}><i className="iconfont">&#xe619;</i></HeaderSearchBtn>
+                            <HeaderSearchBtn className={this.props.focused?'focused':''}><i className="iconfont">&#xe612;</i></HeaderSearchBtn>
                         </HeaderSearch>
                         <HeaderWrite>写文章</HeaderWrite>
                         <HeaderRightUser>
@@ -76,7 +76,8 @@ const mapStateToProps=(state)=>{
     return{
         focused:state.get('header').get('focused'),
         message:state.get('header').get('message'),
-        messagetwolist:state.get('header').get('messagetwolist')
+        messagetwolist:state.get('header').get('messagetwolist'),
+        clickHeader:state.get('header').get('clickHeader')
     }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -97,6 +98,9 @@ const mapDispatchToProps=(dispatch)=>{
             if(item==='消息'){
                 dispatch(actionCreators.messageHide())//是否显示消息下面二级菜单 
             }
+        },
+        clickHeaderActive(item){
+            dispatch(actionCreators.headerActive(item))//是否显示消息下面二级菜单 
         }
     }
 }

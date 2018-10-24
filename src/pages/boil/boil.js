@@ -37,7 +37,7 @@ class Boil extends React.Component{
                         <BoilList>
                             {this.props.list.map((item)=>{
                                 return (
-                                    <BoilConItem>
+                                    <BoilConItem key={item.id}>
                                         <BoilConItemCon>
                                             <BoilConLeft><img src={item.pic} style={{'height':'100%','width':'100%',"borderRadius":"50%"}}/></BoilConLeft>
                                             <BoilConRight>

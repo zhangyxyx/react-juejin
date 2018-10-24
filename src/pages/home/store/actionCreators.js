@@ -67,3 +67,8 @@ export const showuserlist=(data)=>({
         {id:'5',val:'吴晓布',pic:'//upload.jianshu.io/users/upload_avatars/3343569/3cd46650-54bc-4383-989f-80aacb0c42fe.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',text:30000,like:400},
     ]
 })
+export const headerActive=(data)=>({
+    type:constants.CLICK_HEADER_ACTIVE,
+    data:data
+})
+

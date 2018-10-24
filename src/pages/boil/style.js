@@ -107,6 +107,7 @@ export const BoilCon=styled.div`
    margin:0 auto;
    overflow:hidden
    max-width:960px;
+   min-width:870px;
 `
 //left
 export const BoilLeft=styled.div`

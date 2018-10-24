@@ -38,12 +38,6 @@ export const HomeHeaderItem=styled.div`
     color:#71777c;
     font-size:13px;
     cursor:pointer;
-    &.headerActive{
-        a{
-            color:#007fff
-        }
-
-    }
 ` 
 //左边
 export const HomeLeftHeader=styled.div`
@@ -286,3 +280,36 @@ export const TopicStyle=styled.div`
     height:40px;
     background:green
 `
+
+//开源库
+export const OpenSourceList=styled.div`
+    width:100%;
+    float:left;
+    background:#fff;
+`
+export const OpenSourceListItem=styled.div`
+    width:100%;
+    height:131px;
+    padding:0px 10px;
+    border-bottom: 1px solid rgba(0,0,0,.1) 
+`
+export const OpenSourceListItemLeft=styled.div`
+    width:40px;
+    float:left;
+`
+export const OpenSourceListItemRight=styled.div`
+    width:calc(100% - 40px);
+    float:left;
+`
+export const OpenSourceListItemRightP=styled.div`
+    width:100%;
+    height:40px;
+    line-height:40px;
+`
+export const OpenSourceListItemRightPSpan=styled.div`
+    width:80px;
+    height:20px;
+    float:left;
+`
+
+

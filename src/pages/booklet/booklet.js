@@ -45,8 +45,8 @@ class Booklet extends React.Component{
                                 <img src='https://b-gold-cdn.xitu.io/v3/static/img/wechat-qr.f1926e7.png' style={{'marginTop':'10px','width':'100%','height':"95px"}}/>
                             </BookletRightItem>
                             <BookletRightItem className='three'>
-                                <BookletRightBottom><i class="iconfont">&#xe604;</i>成为作者</BookletRightBottom>
-                                <BookletRightBottom><i class="iconfont">&#xe619;</i>建议反馈</BookletRightBottom>
+                                <BookletRightBottom><i className="iconfont">&#xe604;</i>成为作者</BookletRightBottom>
+                                <BookletRightBottom><i className="iconfont">&#xe619;</i>建议反馈</BookletRightBottom>
                             </BookletRightItem>
                             
                        </BookletRight>

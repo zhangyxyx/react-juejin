@@ -13,6 +13,7 @@ export const HomeHeader=styled.div`
     &.homeHeader{
         width:100%;
         max-width:960px;
+        min-width:870px;
         margin:0 auto;
         height:45px;
         line-height:45px;
@@ -35,7 +36,8 @@ export const HomeHeaderItem=styled.div`
 ` 
 //Con
 export const BookletCon=styled.div`
-    max-width:960px;   
+    max-width:960px;  
+    min-width:870px; 
     width:100%;
     margin:10px auto;
     overflow:hidden
