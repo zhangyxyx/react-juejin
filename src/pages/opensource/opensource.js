@@ -3,14 +3,12 @@ import Topic from './components/Topic.js'
 import {Link} from 'react-router-dom'
 import {
     HomeCon,HomeLeft,
-    HomeTopicList,HomeTopicListItem,HomeTopicListItemLeft,HomeTopicListItemLeftTitle,HomeTopicListItemLeftCon,
-    HomeTopicListItemLeftSort,HomeTopicListItemLeftSortEvery,HomeTopicListItemRight,
-    HomeRight,HomeHot,
-    HomeUser,HomeUserList,HomeUserListLeft,HomeUserListCon,HomeUserListConTop,HomeUserListConBottom,HomeUserListRight,
-    HomeUserTitle,
-    HomeHeader,HomeHeaderItem,HomeLeftHeader,HomeLeftHeaderItem,HomeLeftSort,HomeLeftSortItem,HomeTopicListItemLeftTitleEvery,
-    OpenSourceList,OpenSourceListItem,OpenSourceListItemLeft,OpenSourceListItemRight,OpenSourceListItemRightP,OpenSourceListItemRightPSpan,
-    
+    HomeRight,
+    HomeUserList,HomeUserListCon,HomeUserListConTop,
+    HomeHeader,HomeLeftSortItem,
+    OpenSourceBanner,
+    OpenSourceTitle,OpenSourceList,OpenSourceListItem,OpenSourceListItemLeft,OpenSourceListItemRight,OpenSourceListItemRightP,OpenSourceListItemRightPSpan,
+    HomeUserListConTopSpan,
 } from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
@@ -20,15 +18,10 @@ class Home extends React.Component{
         return(
             <div style={{"backgroundColor":"#efefef"}}>
                 <HomeCon>
-                    <HomeHeader>
-                        
-                    </HomeHeader>
                     <HomeHeader className='homeCon'>
                     <HomeLeft>
-                        <HomeLeftHeader>
-                           
-                        </HomeLeftHeader>
-                        <HomeLeftSort>
+                        <OpenSourceBanner></OpenSourceBanner>
+                        <OpenSourceTitle>
                             {
                                 this.props.sortleft.map((item,index)=>{
                                     if(index<=2){
@@ -39,12 +32,12 @@ class Home extends React.Component{
                                     
                                 })
                             }
-                        </HomeLeftSort>
+                        </OpenSourceTitle>
                         <OpenSourceList>
                             {this.props.list.map((item)=>{
                                 return (
                                    <OpenSourceListItem key={item.id}>
-                                       <OpenSourceListItemLeft><img src="./././static/image/opensource/1.png"/></OpenSourceListItemLeft>
+                                       <OpenSourceListItemLeft><img src="https://user-gold-cdn.xitu.io/2018/3/28/1626c1bc2798945c?imageView2/1/w/80/h/80/q/85/format/we" style={{"width":"100%"}}/></OpenSourceListItemLeft>
                                        <OpenSourceListItemRight>
                                             <OpenSourceListItemRightP>{item.val}</OpenSourceListItemRightP>
                                             <OpenSourceListItemRightP>{item.con}</OpenSourceListItemRightP>
@@ -60,26 +53,24 @@ class Home extends React.Component{
                         </OpenSourceList>
                     </HomeLeft>
                     <HomeRight>
-                        <HomeHot></HomeHot>
-                        <HomeHot></HomeHot>
-                        <HomeUser>
-                            <HomeUserTitle>
-                                你可能感兴趣的人
-                            </HomeUserTitle>
-                            {
-                                this.props.user.map((item)=>{
-                                    return (
-                                        <HomeUserList key={item.id}>
-                                        <HomeUserListLeft><img src={item.ipc}/></HomeUserListLeft>
-                                        <HomeUserListCon>
-                                            <HomeUserListConTop>{item.val}</HomeUserListConTop>
-                                            <HomeUserListConBottom>写了{}字 · 8.7k喜欢</HomeUserListConBottom>
-                                        </HomeUserListCon>
-                                        </HomeUserList>
-                                    )
-                                })
-                            }
-                        </HomeUser>
+                        {      
+                            this.props.user.map((item,index)=>{
+                                console.log(this.props.user[index].sort)
+                                return (
+                                    <HomeUserList key={item.id}>
+                                    <HomeUserListCon>
+                                        <HomeUserListConTop>{item.val}</HomeUserListConTop>
+                                        {/* {
+                                            this.props.user[index].sort.map((sortItem)=>{
+                                                return <HomeUserListConTopSpan key={sortItem.id}>{sortItem.con}</HomeUserListConTopSpan>
+                                            })
+                                        }
+                                         */}
+                                    </HomeUserListCon>
+                                    </HomeUserList>
+                                )
+                            })
+                        }
                     </HomeRight>
                     </HomeHeader>
                 </HomeCon>
@@ -105,13 +96,14 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps=(dispatch)=>{
     return{
         showTopicList(){
+            dispatch(actionCreators.showuserlist())
             dispatch(actionCreators.homeheader())
             dispatch(actionCreators.sortleft())
             
             dispatch(actionCreators.showtopiclist())
             //dispatch(actionCreators.showlist())
             dispatch(actionCreators.getshowlist('1'))
-            dispatch(actionCreators.showuserlist())
+            
         },
         clickChangeList(id){
             console.log(1)

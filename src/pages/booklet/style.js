@@ -52,16 +52,20 @@ export const BookletLeftItem=styled.div`
     width:100%;
     height:191px;
     border:1px solid #ccc;
+    padding:10px;
 ` 
 export const BookletLeftItemLeft=styled.div`
-    width:100%;
+    width:150px;
     height:191px;
+    float:left;
     background-color:#fff;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
 ` 
 export const BookletLeftItemRight=styled.div`
-    width:100%;
+    width:calc(100% - 170px);
+    float:left;
     height:191px;
+    padding-left:20px
 ` 
 export const BookletLeftItemRightTop=styled.div`
     width:100%;

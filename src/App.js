@@ -6,10 +6,11 @@ import Detail from './pages/detail/detail.js'//详情
 import Boil from './pages/boil/boil.js'//沸点
 import Booklet from './pages/booklet/booklet.js'//小册
 import Opensource from './pages/opensource/opensource.js'//开源库
+import Activity from './pages/activity/activity.js'//活动
 
 
 import {Provider} from 'react-redux'
-import {BrowserRouter,Route} from 'react-router-dom'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
 import store from './store'
 
 class App extends Component {
@@ -19,13 +20,20 @@ class App extends Component {
         <div>
           <BrowserRouter>
             <div>
-              <Header/>
+              <Route path="/juejin" component={Header} />
               <Route path='/juejin/home' exact component={Home}></Route>
               <Route path='/juejin/home/:id' exact component={Home}></Route>
+
               <Route path='/juejin/boil' exact component={Boil}></Route>
+
               <Route path='/juejin/booklet' exact component={Booklet}></Route>
+              <Route path='/juejin/booklet/:id' exact component={Booklet}></Route>
+
               <Route path="/juejin/detail/:id" exact component={Detail}></Route>
               <Route path="/juejin/Opensource" exact component={Opensource}></Route>
+
+              <Route path="/juejin/activity" exact component={Activity}></Route>
+              <Route path="/juejin/activity/:id" exact component={Activity}></Route>
             </div>
           </BrowserRouter>
         </div>

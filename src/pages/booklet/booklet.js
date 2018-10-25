@@ -21,24 +21,30 @@ class Booklet extends React.Component{
                         {
                             this.props.homeheader.map((item)=>{
                                 var id=item.id;
-                                return <HomeHeaderItem key={item.id} onClick={()=>this.props.clickChangeList(id)} key={item.id}><Link to={{pathname:'/home/'+id}}>{item.val}</Link></HomeHeaderItem>
+                                return <HomeHeaderItem key={item.id} onClick={()=>this.props.clickChangeList(id)} key={item.id}><Link to={{pathname:'/juejin/booklet/'+id}}>{item.val}</Link></HomeHeaderItem>
                             })
                         }
                         </HomeHeader>
                     </HomeHeader>
                    <BookletCon>
                        <BookletLeft>
-                           <BookletLeftItem>
-                                <BookletLeftItemLeft>
-                                    <BookletLeftItemRightTop>Swift 数字详解</BookletLeftItemRightTop>
-                                    <BookletLeftItemRightTop>从理论到应用，全面介绍 Swift 4 中面向协议的数字系统</BookletLeftItemRightTop>
-                                    <BookletLeftItemRightTop>Mattt，AFNetworking 和 Alamofire 作者，苹果前技术作家</BookletLeftItemRightTop>
-                                </BookletLeftItemLeft>
-                           </BookletLeftItem>
+                           {
+                               this.props.list.map((item)=>{
+                                    return (
+                                        <BookletLeftItem key={item.id}>
+                                            <BookletLeftItemLeft><img style={{"width":"100%","height":"100%"}} src='https://user-gold-cdn.xitu.io/2018/10/23/166a0387b91066b9?imageView2/1/w/200/h/280/q/95/format/webp/interlace/1'/></BookletLeftItemLeft>
+                                            <BookletLeftItemRight>
+                                                <BookletLeftItemRightTop>{item.val}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"height":"60px"}}>{item.con}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop>{item.val}</BookletLeftItemRightTop>
+                                            </BookletLeftItemRight>
+                                    </BookletLeftItem>
+                                    )
+                               })
+                           }
                        </BookletLeft>
                        <BookletRight>
                             <BookletRightItem className='one'>掘金小册是什么？
-                            
                             一个小篇幅、高浓度、成体系、有收益的技术学习平台</BookletRightItem>
                             <BookletRightItem className='two'>
                                 关注公众号 领取优惠码

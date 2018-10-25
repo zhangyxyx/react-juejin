@@ -41,11 +41,18 @@ export const showlist=(data)=>({
 })
 export const getshowlist=(id)=>{
     return (dispatch) => {
-        axios.get('/api/header_list_'+id+'.json').then((res)=>{
-            const result=res.data.data;
-            console.log(result)
-            dispatch(showlist(result))
-        })
+        var result=[
+            {id:'1',val:'前端性能优化原理与实践',con:'毫秒必争！深入理解前端性能原理，将晦涩的知识转化为可爱的生产力，建立你自己的优化技能索引目录'},
+            {id:'2',val:'Swift 数字详解',con:'从理论到应用，全面介绍 Swift 4 中面向协议的数字系统'},
+            {id:'3',val:'Netty 入门与实战：仿写微信 IM 即时通讯系统',con:'基于 Netty 框架实现 IM 核心系统，带你深入学习 Netty 网络编程核心知识'},
+            {id:'4',val:'微信小游戏开发入门：从 0 到 1 实现井字棋游戏',con:'构建自己的第一个微信小游戏，让你的社交和游戏创意变为现实'},
+            {id:'5',val:'基于 hapi 的 Node.js 小程序后端开发实践指南',con:'从基础到实战，从开发环境搭建到开发、调试、上线，打通小程序开发全流程'},
+            {id:'6',val:'Redis 深度历险：核心原理与应用实践',con:'基于 React 的企业管理系统开发经验，带你学习如何抽象复杂业务逻辑，帮助团队实现效能提升'},
+            {id:'7',val:'基于 Go 语言构建企业级的 RESTful API 服务',con:'Go 服务器开发大型实战，带你一步步构建 API 开发中的各个功能点，最终完成一个企业级的 API 服务器'},
+            {id:'8',val:'深入理解 RPC : 基于 Python 自建分布式高并发 RPC 服务',con:'通过「造轮子」自建 Python RPC 服务，深入理解分布式高并发原理与实践'},
+        ]
+        dispatch(showlist(result))
+
     }
 }
 export const showuserlist=(data)=>({

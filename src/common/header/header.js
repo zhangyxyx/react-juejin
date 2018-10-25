@@ -19,7 +19,7 @@ class Header extends React.Component{
                 {id:'2',val:'沸点',mark:'boil',pic:'\ue609'},
                 {id:'3',val:'小册',mark:'booklet',pic:'\ue634'},
                 {id:'4',val:'开源库',mark:'opensource',pic:'\ue634'},
-                {id:'5',val:'活动',mark:'boil',pic:'\ue634'},
+                {id:'5',val:'活动',mark:'activity',pic:'\ue634'},
             ],
         }
     }
@@ -30,11 +30,23 @@ class Header extends React.Component{
                     {this.props.messagetwolist.map((item)=>{
                         return <HeaderMsgList key={item.id}><i className="iconfont" style={{"color":"#ea6f5a"}}>{item.imgsrc}</i>{item.val}</HeaderMsgList>
                     })}
+                    {this.props.params}
                 </HeaderMsg>
             )
         }else{
             return null;
         }
+    }
+    componentDidMount(){
+        var json={
+            home:'1',
+            boil:'2',
+            booklet:'3',
+            opensource:'4',
+            activity:'5',
+        }
+        var id=this.props.location.pathname.split('/')[2]
+        this.props.clickHeaderActive(json[id])
     }
     render(){
         const {changeMessageShow,changeMessageHide}=this.props

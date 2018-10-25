@@ -32,45 +32,15 @@ export const HomeHeader=styled.div`
         background-color:#efefef;
     }
 ` 
-export const HomeHeaderItem=styled.div`
-    float:left;
-    padding:0px 10px;
-    color:#71777c;
-    font-size:13px;
-    cursor:pointer;
-` 
+
 //左边
-export const HomeLeftHeader=styled.div`
-    width:100%;
-    height:50px;
-    line-height:50px;
-    border:1px solid #efefef;
-    color:#007fff;
-    margin-bottom:10px;
-    background:#fff;
-` 
-export const HomeLeftHeaderItem=styled.div`
-    float:left;
-    padding:0px 10px;
-    color:#71777c;
-    font-size:13px;
-    color:#007fff;
-    margin:0px 10px;
-`
 
 export const HomeLeft=styled.div`
     margin-top:10px;
     width:70%;
     float:left;
 `   
-export const HomeLeftSort=styled.div`
-    width:100%;
-    height:46px;
-    line-height:46px;
-    border-bottom:1px solid #efefef;
-    background-color:#fff;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
-`  
+
 export const HomeLeftSortItem=styled.div`
     float:left;
     padding:0px 10px;
@@ -98,110 +68,18 @@ export const HotTopicList=styled.div`
     background:#ffff;
     margin:5px 10px 5px 0px
 ` 
-//列表
-export const HomeTopicList=styled.div`
-    width:calc(100% - 20px);
-    background-color:#fff;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
-    padding:0px 10px
-`
-export const HomeTopicListItem=styled.div`
-    width:100%;
-    height:116px;
-    padding:10px 0px;
-    border-bottom:1px solid #f0f0f0;
-    min-height:80px;
-`
-export const HomeTopicListItemLeft=styled.div`
-    width:80%;
-    height:100%;
-    float:left;
-`
-export const HomeTopicListItemLeftTitle=styled.div`
-    width:100%;
-    height:16px;
-    margin:0px 0px 5px 0px;
-`
-export const HomeTopicListItemLeftTitleEvery=styled.div`
-    font-size:13px;
-    color:#ccc;
-    margin:0px 5px;
-    float:left;
-`
-export const HomeTopicListItemLeftCon=styled.h4`
-    width:100%;
-    height:22px;
-    overflow:hidden;
-    word-break:break-all; 
-`
-export const HomeTopicListItemLeftSort=styled.div`
-    width:100%;
-    height:24px;
-    color:#ccc;
-    padding:5px 0px;
-`
-export const HomeTopicListItemLeftSortEvery=styled.div`
-    float:left;
-    border:1px solid #ccc;
-    padding:1px 10px;
-    font-size:13px;
-`
-export const HomeTopicListItemRight=styled.div`
-    width:80px;
-    height:80px;
-    float:right;
-`
-//====结束
+
 export const HomeRight=styled.div`
     width:28%;
     margin-left:2%;
     float:left;
+    background:#fff;
+    margin-top:10px;
 
 `  
-export const HomeHot=styled.div`
-    width:100%;
-    height:40px;
-    &.seven{
-        background:url('//cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png');
-        background-size:100% 100%;
-    }
-    &.thirty{
-        background:url('//cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png');
-        background-size:100% 100%;
-    }
-    &.serial{
-        background:url('//cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png');
-        background-size:100% 100%;
-    }
-    &.copyright{
-        background:url('//cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png');
-        background-size:100% 100%;
-    }
-    &.school{
-        background:url('//cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png');
-        background-size:100% 100%;
-    }
-`  
+ 
 //用户列表
-export const HomeUserTitle=styled.div`
-    padding:0px 10px;
-    margin-top:20px;
-    width:100%;
-    height:42px;
-    line-height:42px;
-    font-size:14px;
-    color:#969696;
-    border:1px solid #efefef;
 
-`
-export const HomeUserTitleLeft=styled.div`
-    height:20px;
-    float:left;
-`
-export const HomeUserTitleRight=styled.div`
-    height:20px;
-    float:right
-`
 
 export const HomeUser=styled.div`
     width:100%;
@@ -211,36 +89,28 @@ export const HomeUser=styled.div`
 `
 export const HomeUserList=styled.div`
     width:100%;
-    height:47px;
+    height:100px;
     margin-top:15px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
 `
-export const HomeUserListLeft=styled.div`
-    width:47px;
-    height:47px;
-    border-radius:50%;
-    float:left;
-    background:url('//upload.jianshu.io/users/upload_avatars/3884693/b425c707-d998-46a6-98b1-9b1e241513c3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp')
-`
+
 export const HomeUserListCon=styled.div`
     margin-left:10px;
     height:47px;
-    float:left;
+    float:left
 `
 export const HomeUserListConTop=styled.div`
     height:30px;
     font-size:14px;
 `
-export const HomeUserListConBottom=styled.div`
-    width:100%;
-    height:25px;
-    font-size:13px;
+export const HomeUserListConTopSpan=styled.div`
+    height:30px;
+    font-size:14px;
+    display:block;
+    float:left;
+    color:#3b76c5;margin:0px 5px;
 `
-export const HomeUserListRight=styled.div`
-    height:25px;
-    font-size:13px;
-    float:right;
-    color:#42c02e
-`
+
 export const HomeUserAll=styled.div`
     margin-top:20px;
     padding: 7px 7px 7px 12px;
@@ -282,6 +152,20 @@ export const TopicStyle=styled.div`
 `
 
 //开源库
+
+export const OpenSourceBanner=styled.div`
+    width:100%;
+    height:144px;
+    background:#fff;
+`
+
+export const OpenSourceTitle=styled.div`
+    width:100%;
+    height:45px;
+    line-height:45px;
+    margin:10px 0px;
+    background:#fff;
+`
 export const OpenSourceList=styled.div`
     width:100%;
     float:left;
@@ -294,11 +178,13 @@ export const OpenSourceListItem=styled.div`
     border-bottom: 1px solid rgba(0,0,0,.1) 
 `
 export const OpenSourceListItemLeft=styled.div`
-    width:40px;
+    width:80px;
     float:left;
+    padding-right:10px
+    padding-top:15px;
 `
 export const OpenSourceListItemRight=styled.div`
-    width:calc(100% - 40px);
+    width:calc(100% - 90px);
     float:left;
 `
 export const OpenSourceListItemRightP=styled.div`
