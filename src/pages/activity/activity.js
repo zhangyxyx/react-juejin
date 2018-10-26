@@ -77,7 +77,7 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch(actionCreators.homeheader())
             dispatch(actionCreators.sortleft())
             
-            dispatch(actionCreators.showtopiclist())
+            //dispatch(actionCreators.showtopiclist())
             //dispatch(actionCreators.showlist())
             dispatch(actionCreators.getshowlist('1'))
             dispatch(actionCreators.showuserlist())

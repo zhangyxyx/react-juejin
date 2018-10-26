@@ -14,8 +14,8 @@ export const BoilText=styled.div`
 export const BoilTextArea=styled.textarea`
     width:90%;    
     height:91px;
-    margin:10px 0px 0px 5%;
     border:1px solid #efefef;
+    padding:10px;
 `
 export const BoilTextBottom=styled.div`
     width:100%;    
@@ -42,8 +42,8 @@ export const BoilTextBottomBtn=styled.div`
 `
 export const BoilHeader=styled.div`
     width:100%;   
-    height:62px;
-    line-height:62px;
+    height:42px;
+    line-height:42px;
     border-bottom:1px solid #efefef;
     background-color:#fff;
     margin:10px 0px;
@@ -53,6 +53,8 @@ export const BoilHeaderItem=styled.div`
     width:50%;   
     float:left;
     text-align:center;
+    color:#909090;
+    font-size:15px;
 `
 //Boil列表
 export const BoilList=styled.div`
@@ -73,14 +75,15 @@ export const BoilConItemCon=styled.div`
 
 `
 export const BoilConLeft=styled.div`
-    width:10%;
-    height:100%;
+    width:50px;
+    height:50px;
+    margin-right:20px;
+    margin-left:20px;
     float:left;
-    margin-right:5%;
 `
 export const BoilConRight=styled.div`
     float:left;
-    width:85%;
+    width:calc(100% - 90px);
     height:100%;
 `
 export const BoilConRightEvery=styled.div`
@@ -94,7 +97,7 @@ export const BoilConBottom=styled.div`
     bottom:0px;
 `
 export const BoilConBottomItem=styled.div`
-    width:32%;
+    width:33%;
     height:32px;
     line-height:32px;
     text-align:center;
@@ -143,6 +146,8 @@ export const BoilRightTop2Every=styled.div`
     border-top:1px solid #efefef;
     border-bottom:1px solid #efefef;
     float:left;
+    font-size:15px;
+    color:#909090
 `
 //关注的话题
 export const BoilRightTopic=styled.div`
@@ -150,6 +155,7 @@ export const BoilRightTopic=styled.div`
     min-height:113px;
     background-color:#fff;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    padding:0px 10px
 `
 export const BoilRightTopicTitle=styled.div`
     width:100%;
@@ -163,6 +169,9 @@ export const BoilRightTopicTitleEvery=styled.div`
 export const BoilRightTopicConItem=styled.div`
     width:100%;
     height:62px;
+    line-height:62px;
+    font-size:15px;
+    color:#909090;
 `
 
 

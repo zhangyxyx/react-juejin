@@ -167,6 +167,7 @@ export const HomeRight=styled.div`
 export const HomeHot=styled.div`
     width:100%;
     height:40px;
+    margin-top:10px;
     &.seven{
         background:url('//cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png');
         background-size:100% 100%;

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import Header from './common/header/header.js'
 import Home from './pages/home/home.js'//主页
-import Detail from './pages/detail/detail.js'//详情
 import Boil from './pages/boil/boil.js'//沸点
 import Booklet from './pages/booklet/booklet.js'//小册
 import Opensource from './pages/opensource/opensource.js'//开源库
 import Activity from './pages/activity/activity.js'//活动
+import Detail from './pages/detail/detail.js'//详情
 
 
 import {Provider} from 'react-redux'
@@ -34,6 +34,9 @@ class App extends Component {
 
               <Route path="/juejin/activity" exact component={Activity}></Route>
               <Route path="/juejin/activity/:id" exact component={Activity}></Route>
+
+              <Route path="/juejin/Detail" exact component={Detail}></Route>
+              
             </div>
           </BrowserRouter>
         </div>

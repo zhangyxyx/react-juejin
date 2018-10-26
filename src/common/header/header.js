@@ -69,7 +69,7 @@ class Header extends React.Component{
                         {this.showMessageList()}
                         <HeaderSearch>
                             <HeaderInput onFocus={this.props.handelInputFocused} onBlur={this.props.handleInputBlur}/>
-                            <HeaderSearchBtn className={this.props.focused?'focused':''}><i className="iconfont">&#xe612;</i></HeaderSearchBtn>
+                            <HeaderSearchBtn className={this.props.focused?'focused':''}><i className="iconfont" style={{"width":"10px"}}>&#xe72e;</i></HeaderSearchBtn>
                         </HeaderSearch>
                         <HeaderWrite>写文章</HeaderWrite>
                         <HeaderRightUser>

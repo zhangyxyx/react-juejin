@@ -97,14 +97,14 @@ export const HeaderSearchBtn=styled.div`
     width:20px;
     height:25px;
     margin-top:15px;
-    background:red;
+    background:#efefef;
     float:left;
     position:absolute;
     right:0px;
     top:0px;
     &.focused{
         width:20px;
-        background:green;
+        background:#ccc;
     }
 `
 export const HeaderWrite=styled.div`

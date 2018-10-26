@@ -1,0 +1,1 @@
+export const SHOW_CONTENTS='detail/SHOW_CONTENTS'

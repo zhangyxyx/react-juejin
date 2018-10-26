@@ -39,7 +39,7 @@ class Boil extends React.Component{
                                 return (
                                     <BoilConItem key={item.id}>
                                         <BoilConItemCon>
-                                            <BoilConLeft><img src={item.pic} style={{'height':'100%','width':'100%',"borderRadius":"50%"}}/></BoilConLeft>
+                                            <BoilConLeft><img src={item.pic} style={{'height':'100%','width':'100%'}}/></BoilConLeft>
                                             <BoilConRight>
                                                 <BoilConRightEvery>{item.user}</BoilConRightEvery>
                                                 <BoilConRightEvery>{item.user}</BoilConRightEvery>
@@ -57,7 +57,8 @@ class Boil extends React.Component{
                     </BoilLeft>
                     <BoilRight>
                         <BoilRightTop1>
-                            zhangyx
+                            <img src='https://avatars.githubusercontent.com/u/17818212?v=3' style={{"width":"40px","width":"40px","margin":"20px"}}/>
+                            <BoilRightTop2Every>zhangyx</BoilRightTop2Every>
                         </BoilRightTop1>
                         <BoilRightTop2>
                             <BoilRightTop2Every>沸点</BoilRightTop2Every>
@@ -68,6 +69,7 @@ class Boil extends React.Component{
                             <BoilRightTopicTitle>
                                 <BoilRightTopicTitleEvery>关注的话题</BoilRightTopicTitleEvery>
                             </BoilRightTopicTitle>
+                            <img style={{"float":"left","width":"40px","margin":"5px 10px 0px 5px"}} src="https://user-gold-cdn.xitu.io/2018/3/28/1626c1bc2798945c?imageView2/1/w/80/h/80/q/85/format/webp/interlace/1"/>
                             <BoilRightTopicConItem>每天一道算法题</BoilRightTopicConItem>
                         </BoilRightTopic>
                     </BoilRight>

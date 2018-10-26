@@ -40,7 +40,7 @@ class Home extends React.Component{
                             <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe605;</i>发沸点</HomeLeftHeaderItem>
                             <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe697;</i>写文章</HomeLeftHeaderItem>
                             <HomeLeftHeaderItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe60b;</i>分享链接</HomeLeftHeaderItem>
-                            <HomeHeaderItem>草稿</HomeHeaderItem>
+                            <HomeHeaderItem style={{"float":"right"}}>草稿</HomeHeaderItem>
                         </HomeLeftHeader>
                         <HomeLeftSort>
                             {
@@ -57,6 +57,7 @@ class Home extends React.Component{
                         <HomeTopicList>
                             {this.props.list.map((item)=>{
                                 return (
+                                    <Link to="/juejin/detail">
                                     <HomeTopicListItem key={item.id}>
                                         <HomeTopicListItemLeft>
                                             <HomeTopicListItemLeftTitle>
@@ -73,13 +74,15 @@ class Home extends React.Component{
                                         </HomeTopicListItemLeft>
                                         <HomeTopicListItemRight><img src={item.pic} style={{'float':'right','height':'100%','width':'100%'}}/></HomeTopicListItemRight>
                                     </HomeTopicListItem>
+                                    </Link>
                                 )
                             })}
                         </HomeTopicList>
                     </HomeLeft>
                     <HomeRight>
-                        <HomeHot></HomeHot>
-                        <HomeHot></HomeHot>
+                        <HomeHot style={{"height":"200px"}}><img style={{"width":"100%"}} src='https://user-gold-cdn.xitu.io/154046766020771b068f26a5ef57e82103b769ad96998.jpg?imageView2/1/q/85/format/webp/interlace/1'/></HomeHot>
+                        <HomeHot style={{"height":"200px"}}><img style={{"width":"100%"}} src='https://user-gold-cdn.xitu.io/15404521482021190ffa3c696d33bdecd7da2437d5c13.jpg?imageView2/1/q/85/format/webp/interlace/1'/></HomeHot>
+
                         <HomeUser>
                             <HomeUserTitle>
                                 你可能感兴趣的人

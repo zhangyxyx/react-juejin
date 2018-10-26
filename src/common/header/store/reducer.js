@@ -24,7 +24,6 @@ export default (state=defaultState,action)=>{
         return state.set('messagetwolist',action.data)
     }
     if(action.type===constants.CLICK_HEADER_ACTIVE){
-        console.log(action.data)
         return state.set('clickHeader',action.data)
     }
     return state
