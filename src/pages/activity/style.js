@@ -49,6 +49,8 @@ export const ActivityCon=styled.div`
     width:100%;
     max-width:960px;
     margin:10px auto;
+    overflow:hidden;
+    background:#fff;
 ` 
 export const ActivityConTitle=styled.div`
     width:100%;

@@ -18,9 +18,10 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
+          
           <BrowserRouter>
             <div>
-              <Route path="/juejin" component={Header} />
+              <Route path="/" component={Header} />
               <Route path='/juejin/home' exact component={Home}></Route>
               <Route path='/juejin/home/:id' exact component={Home}></Route>
 

@@ -46,13 +46,13 @@ export const BookletCon=styled.div`
 export const BookletLeft=styled.div`
     width:75%;
     float:left;
-    
+    background:#fff;
 ` 
 export const BookletLeftItem=styled.div`
     width:100%;
     height:191px;
     border:1px solid #ccc;
-    padding:10px;
+
 ` 
 export const BookletLeftItemLeft=styled.div`
     width:150px;
