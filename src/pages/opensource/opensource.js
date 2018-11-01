@@ -1,6 +1,5 @@
 import React from 'react'
-import Topic from './components/Topic.js'
-import {Link} from 'react-router-dom'
+import Header from '@/common/header/header.js'
 import {
     HomeCon,HomeLeft,
     HomeRight,
@@ -8,7 +7,7 @@ import {
     HomeHeader,HomeLeftSortItem,
     OpenSourceBanner,
     OpenSourceTitle,OpenSourceList,OpenSourceListItem,OpenSourceListItemLeft,OpenSourceListItemRight,OpenSourceListItemRightP,OpenSourceListItemRightPSpan,
-    HomeUserListConTopSpan,
+
 } from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
@@ -16,6 +15,8 @@ import {actionCreators} from './store'
 class Home extends React.Component{
     render(){
         return(
+            <React.Fragment>
+            <Header parentProp={this.props} key="1"/>
             <div style={{"backgroundColor":"#efefef"}}>
                 <HomeCon>
                     <HomeHeader className='homeCon'>
@@ -76,6 +77,7 @@ class Home extends React.Component{
                 </HomeCon>
                 
             </div>
+            </React.Fragment>
         )
     }
     componentDidMount(){

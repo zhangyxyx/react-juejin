@@ -7,7 +7,7 @@ import {
     HeaderWrite} from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
-import Item from 'antd/lib/list/Item';
+
 
 
 class Header extends React.Component{
@@ -45,7 +45,8 @@ class Header extends React.Component{
             opensource:'4',
             activity:'5',
         }
-        var id=this.props.location.pathname.split('/')[2]
+ 
+        var id=this.props.parentProp.location.pathname.split('/')[2]
         this.props.clickHeaderActive(json[id])
     }
     render(){

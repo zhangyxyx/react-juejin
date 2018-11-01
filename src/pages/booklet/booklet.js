@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '@/common/header/header.js'
 import {Link} from 'react-router-dom'
 import {
     HomeCon,
@@ -14,6 +15,8 @@ import {actionCreators} from './store'
 class Booklet extends React.Component{
     render(){
         return(
+            <React.Fragment>
+            <Header parentProp={this.props} key="1"/>
             <div style={{"backgroundColor":"#efefef"}}>
                 <HomeCon>
                     <HomeHeader>
@@ -60,6 +63,7 @@ class Booklet extends React.Component{
                 </HomeCon>
                 
             </div>
+            </React.Fragment>
         )
     }
     componentDidMount(){

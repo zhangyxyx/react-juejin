@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import Header from '@/common/header/header.js'
 import {
     BoilCon,
     BoilLeft,
@@ -15,6 +15,8 @@ import {actionCreators} from './store'
 class Boil extends React.Component{
     render(){
         return(
+            <React.Fragment>
+                <Header parentProp={this.props} key="1"/>
             <div style={{"backgroundColor":"#efefef"}}>
                 <BoilCon>
                     <BoilLeft>
@@ -76,6 +78,7 @@ class Boil extends React.Component{
                 </BoilCon>
                 
             </div>
+            </React.Fragment>
         )
     }
     componentDidMount(){

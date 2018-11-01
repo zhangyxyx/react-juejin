@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Header from '@/common/header/header.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
 import {
@@ -10,6 +10,8 @@ import {
 class Detail extends React.Component{
     render(){
         return(
+            <React.Fragment>
+            <Header parentProp={this.props} key="1"/>
             <div style={{"backgroundColor":"#efefef"}}>
             <DetailCon>
                 <DetailConLeft>
@@ -37,6 +39,7 @@ class Detail extends React.Component{
                 </DetailConRight>
             </DetailCon>
             </div>
+            </React.Fragment>
         )
     }
     componentDidMount(){

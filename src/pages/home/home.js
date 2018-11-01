@@ -1,12 +1,12 @@
 import React from 'react'
-import Topic from './components/Topic.js'
+import Header from '@/common/header/header.js'
 import {Link} from 'react-router-dom'
 import {
     HomeCon,HomeLeft,
     HomeTopicList,HomeTopicListItem,HomeTopicListItemLeft,HomeTopicListItemLeftTitle,HomeTopicListItemLeftCon,
     HomeTopicListItemLeftSort,HomeTopicListItemLeftSortEvery,HomeTopicListItemRight,
     HomeRight,HomeHot,
-    HomeUser,HomeUserList,HomeUserListLeft,HomeUserListCon,HomeUserListConTop,HomeUserListConBottom,HomeUserListRight,
+    HomeUser,HomeUserList,HomeUserListLeft,HomeUserListCon,HomeUserListConTop,HomeUserListConBottom,
     HomeUserTitle,
     HomeHeader,HomeHeaderItem,HomeLeftHeader,HomeLeftHeaderItem,HomeLeftSort,HomeLeftSortItem,HomeTopicListItemLeftTitleEvery,
     
@@ -17,6 +17,8 @@ import {actionCreators} from './store'
 class Home extends React.Component{
     render(){
         return(
+            <React.Fragment>
+            <Header parentProp={this.props} key="1"/>
             <div style={{"backgroundColor":"#efefef"}}>
                 <HomeCon>
                     <HomeHeader>
@@ -106,12 +108,14 @@ class Home extends React.Component{
                 </HomeCon>
                 
             </div>
+            </React.Fragment>
         )
     }
     componentDidMount(){
         this.props.showTopicList();
     }
 }
+
 const mapStateToProps=(state)=>{
     return{
         homeheader:state.get('home').get('homeheader'),
@@ -136,7 +140,7 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch(actionCreators.showuserlist())
         },
         clickChangeList(id){
-            console.log(id)
+
             dispatch(actionCreators.headerActive(id))
             //dispatch(actionCreators.getshowlist(id))
         }
