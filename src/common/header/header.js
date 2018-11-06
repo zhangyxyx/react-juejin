@@ -52,7 +52,7 @@ class Header extends React.Component{
     render(){
         const {changeMessageShow,changeMessageHide}=this.props
         return(
-            <div>
+            <div style={{"border-bottom":"1px solid #efefef"}}>
                 <HeaderWrapper>
                     <HeaderWrapper className='HeaderWrapper'>
                     <HeaderLeft >

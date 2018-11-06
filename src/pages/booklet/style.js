@@ -7,7 +7,7 @@ export const HomeCon=styled.div`
 //header
 export const HomeHeader=styled.div`
     width:100%;
-    border-bottom:1px solid #ccc;
+    border-bottom:1px solid #efefef;
     background-color:#fff;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
     &.homeHeader{
