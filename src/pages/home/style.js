@@ -42,7 +42,9 @@ export const HomeHeaderItem=styled.div`
         a{
             color:#007fff
         }
-
+    }
+    &:hover{
+        color:#007fff
     }
 ` 
 //左边
@@ -84,6 +86,10 @@ export const HomeLeftSortItem=styled.div`
     font-size:13px;
     color:#909090;
     margin:0px 10px;
+    cursor:pointer;
+    &:hover{
+        color:#007fff
+    }
 `  
 
 export const HomeConBanner=styled.div`

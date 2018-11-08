@@ -55,7 +55,9 @@ export const HeaderConLeft=styled.div`
         }
         
     }
-    
+    &:hover{
+        color:#007fff
+    }
 
 `
 export const HeaderRight=styled.div`
