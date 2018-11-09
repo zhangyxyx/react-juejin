@@ -3,7 +3,7 @@ import Header from '@/common/header/header.js'
 import {Link} from 'react-router-dom'
 import {
     HomeCon,HomeLeft,
-    HomeTopicList,HomeTopicListItem,HomeTopicListItemLeft,HomeTopicListItemLeftTitle,HomeTopicListItemLeftCon,
+    HomeTopicList,HomeTopicListItem,HomeTopicListItemLeft,HomeTopicListItemLeftTitle,HomeTopicListItemLeftCon,HomeTopicListItemLeftConContent,
     HomeTopicListItemLeftSort,HomeTopicListItemLeftSortEvery,HomeTopicListItemRight,
     HomeRight,HomeHot,
     HomeUser,HomeUserList,HomeUserListLeft,HomeUserListCon,HomeUserListConTop,HomeUserListConBottom,
@@ -26,7 +26,7 @@ class Home extends React.Component{
                         {
                             this.props.homeheader.map((item)=>{
                                 var id=item.id;
-                                return <HomeHeaderItem className={this.props.clickHeader===item.id?'headerActive':''} 
+                                return <HomeHeaderItem key={item.id} className={this.props.clickHeader===item.id?'headerActive':''} 
                                     onClick={()=>this.props.clickChangeList(id)} key={item.id}>
                                 <Link to={{pathname:'/juejin/home/'+id}}>{item.val}</Link>
                                 </HomeHeaderItem>
@@ -48,9 +48,9 @@ class Home extends React.Component{
                             {
                                 this.props.sortleft.map((item,index)=>{
                                     if(index<=2){
-                                        return <HomeLeftSortItem key={item.id}>{item.val}</HomeLeftSortItem>
+                                        return <HomeLeftSortItem key={index}>{item.val}</HomeLeftSortItem>
                                     }else {
-                                        return <HomeLeftSortItem key={item.id} style={{"float":"right"}}>{item.val}</HomeLeftSortItem>
+                                        return <HomeLeftSortItem key={index} style={{"float":"right"}}>{item.val}</HomeLeftSortItem>
                                     }
                                     
                                 })
@@ -59,32 +59,56 @@ class Home extends React.Component{
                         <HomeTopicList>
                             {this.props.list.map((item)=>{
                                 return (
-                                    <Link to="/juejin/detail">
                                     <HomeTopicListItem key={item.id}>
+                                        <Link to="/juejin/detail">
                                         <HomeTopicListItemLeft>
                                             <HomeTopicListItemLeftTitle>
-                                                <HomeTopicListItemLeftTitleEvery>专栏</HomeTopicListItemLeftTitleEvery>
-                                                <HomeTopicListItemLeftTitleEvery>{item.user}</HomeTopicListItemLeftTitleEvery>
-                                                <HomeTopicListItemLeftTitleEvery>4分钟前</HomeTopicListItemLeftTitleEvery>
-                                                <HomeTopicListItemLeftTitleEvery>html/前端</HomeTopicListItemLeftTitleEvery>
+                                                <HomeTopicListItemLeftTitleEvery>{item.category.name}</HomeTopicListItemLeftTitleEvery>
+                                                <HomeTopicListItemLeftTitleEvery>{item.user.username}</HomeTopicListItemLeftTitleEvery>
+                                                <HomeTopicListItemLeftTitleEvery>{item.updatedAt}</HomeTopicListItemLeftTitleEvery>
+                                                <HomeTopicListItemLeftTitleEvery>
+                                                    {item.tags.map((k,index)=>{
+                                                        return <p style={{"float":"left"}}>{k.title}|</p>
+                                                    })}
+                                                </HomeTopicListItemLeftTitleEvery>
                                             </HomeTopicListItemLeftTitle>
                                             <HomeTopicListItemLeftCon>{item.title}</HomeTopicListItemLeftCon>
+                                            {/* <HomeTopicListItemLeftConContent>{item.content}</HomeTopicListItemLeftConContent> */}
                                             <HomeTopicListItemLeftSort>
-                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe601;</i>{item.common}</HomeTopicListItemLeftSortEvery>
-                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe623;</i>{item.like}</HomeTopicListItemLeftSortEvery>
+                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe601;</i>{item.collectionCount}</HomeTopicListItemLeftSortEvery>
+                                                <HomeTopicListItemLeftSortEvery><i className="iconfont" style={{"width":"10px"}}>&#xe623;</i>{item.commentsCount}</HomeTopicListItemLeftSortEvery>
                                             </HomeTopicListItemLeftSort>
                                         </HomeTopicListItemLeft>
-                                        <HomeTopicListItemRight><img src={item.pic} style={{'float':'right','height':'100%','width':'100%'}}/></HomeTopicListItemRight>
+                                        <HomeTopicListItemRight><img src={item.user.avatarLarge} style={{'float':'right','height':'100%','width':'100%'}}/></HomeTopicListItemRight>
+                                        </Link>
                                     </HomeTopicListItem>
-                                    </Link>
+                                   
                                 )
                             })}
                         </HomeTopicList>
                     </HomeLeft>
                     <HomeRight>
-                        <HomeHot style={{"height":"200px"}}><img style={{"width":"100%"}} src='https://user-gold-cdn.xitu.io/154046766020771b068f26a5ef57e82103b769ad96998.jpg?imageView2/1/q/85/format/webp/interlace/1'/></HomeHot>
-                        <HomeHot style={{"height":"200px"}}><img style={{"width":"100%"}} src='https://user-gold-cdn.xitu.io/15404521482021190ffa3c696d33bdecd7da2437d5c13.jpg?imageView2/1/q/85/format/webp/interlace/1'/></HomeHot>
-
+                        <HomeHot style={{"height":"200px"}}><img style={{"width":"100%","height":"100%"}} src='https://user-gold-cdn.xitu.io/154046766020771b068f26a5ef57e82103b769ad96998.jpg?imageView2/1/q/85/format/webp/interlace/1'/></HomeHot>
+                        <HomeHot style={{"height":"200px"}}><img style={{"width":"100%","height":"100%"}} src='https://user-gold-cdn.xitu.io/15404521482021190ffa3c696d33bdecd7da2437d5c13.jpg?imageView2/1/q/85/format/webp/interlace/1'/></HomeHot>
+                        <HomeUser>
+                            <HomeUserTitle>
+                                你可能感兴趣的小册
+                            </HomeUserTitle>
+                            {
+                                this.props.book.map((item)=>{
+                                    return (
+                                        <HomeUserList key={item.objectId}>
+                                        <HomeUserListLeft><img style={{"width":"100%"}} src={item.img}/></HomeUserListLeft>
+                                        <HomeUserListCon>
+                                            <HomeUserListConTop>{item.title}</HomeUserListConTop>
+                                            <HomeUserListConBottom>{item.buyCount}人购买</HomeUserListConBottom>
+                                            {/* <HomeUserListConBottom>写了{}字 · 8.7k喜欢</HomeUserListConBottom> */}
+                                        </HomeUserListCon>
+                                        </HomeUserList>
+                                    )
+                                })
+                            }
+                        </HomeUser>
                         <HomeUser>
                             <HomeUserTitle>
                                 你可能感兴趣的人
@@ -92,11 +116,12 @@ class Home extends React.Component{
                             {
                                 this.props.user.map((item)=>{
                                     return (
-                                        <HomeUserList key={item.id}>
-                                        <HomeUserListLeft><img src={item.ipc}/></HomeUserListLeft>
+                                        <HomeUserList key={item.objectId}>
+                                        <HomeUserListLeft><img style={{"width":"100%"}} src={item.avatarLarge}/></HomeUserListLeft>
                                         <HomeUserListCon>
-                                            <HomeUserListConTop>{item.val}</HomeUserListConTop>
-                                            <HomeUserListConBottom>写了{}字 · 8.7k喜欢</HomeUserListConBottom>
+                                            <HomeUserListConTop>{item.username}</HomeUserListConTop>
+                                            <HomeUserListConTop>{item.company}</HomeUserListConTop>
+                                            {/* <HomeUserListConBottom>写了{}字 · 8.7k喜欢</HomeUserListConBottom> */}
                                         </HomeUserListCon>
                                         </HomeUserList>
                                     )
@@ -117,6 +142,7 @@ class Home extends React.Component{
 }
 
 const mapStateToProps=(state)=>{
+
     return{
         homeheader:state.get('home').get('homeheader'),
         sortleft:state.get('home').get('sortleft'),
@@ -125,6 +151,7 @@ const mapStateToProps=(state)=>{
         topic:state.get('home').get('topic'),
         list:state.get('home').get('list'),
         user:state.get('home').get('user'),
+        book:state.get('home').get('book'),
         clickHeader:state.get('home').get('clickHeader'),
     }
 }
@@ -133,14 +160,13 @@ const mapDispatchToProps=(dispatch)=>{
         showTopicList(){
             dispatch(actionCreators.homeheader())
             dispatch(actionCreators.sortleft())
-            
             dispatch(actionCreators.showtopiclist())
             //dispatch(actionCreators.showlist())
-            dispatch(actionCreators.getshowlist('1'))
-            dispatch(actionCreators.showuserlist())
+            dispatch(actionCreators.getshowlist())//显示列表
+            dispatch(actionCreators.showuserlist())//显示感兴趣的人
+            dispatch(actionCreators.showbooklist())//显示小册
         },
         clickChangeList(id){
-
             dispatch(actionCreators.headerActive(id))
             //dispatch(actionCreators.getshowlist(id))
         }

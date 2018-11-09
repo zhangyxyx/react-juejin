@@ -1,0 +1,23 @@
+{
+    "s":1,
+    "m":"success",
+    "d":{
+        "total":1,
+        "list":[
+            {
+                "objectId":"5abb6b77092dcb4620ca3328",
+                "title":"每天一道算法题",
+                "description":"每天精选一道算法题，帮助你更好地精进。",
+                "icon":"https://user-gold-cdn.xitu.io/2018/3/28/1626c1bc2798945c?w=580&h=580&f=png&s=91013",
+                "msgsCount":75,
+                "followersCount":6067,
+                "attendersCount":367,
+                "hotIndex":5494,
+                "createdAt":"2018-03-28T10:16:23.601Z",
+                "updatedAt":"2018-11-09T00:55:37.49Z",
+                "latestMsgCreatedAt":"2018-11-09T00:25:11.611Z",
+                "followed":true
+            }
+        ]
+    }
+}

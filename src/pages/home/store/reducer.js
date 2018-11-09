@@ -7,6 +7,7 @@ const defaultState=fromJS({
     topic:[],
     list:[],
     user:[],
+    book:[],
     clickHeader:'1'
 });
 export default (state=defaultState,action)=>{
@@ -16,10 +17,6 @@ export default (state=defaultState,action)=>{
     if(action.type===constants.SORT_LEFT){
         return state.set('sortleft',action.data) 
     }
-    // if(action.type===constants.SORT_RIGHT){
-    //     return state.set('sortright',action.data) 
-    // }
-    
     if(action.type===constants.SHOW_TOPIC_LIST){
         return state.set('topic',action.data)
     }
@@ -28,6 +25,9 @@ export default (state=defaultState,action)=>{
     }
     if(action.type===constants.SHOW_USER_LIST){
         return state.set('user',action.data)
+    }
+    if(action.type===constants.SHOW_BOOK){
+        return state.set('book',action.data)
     }
     if(action.type===constants.CLICK_HEADER_ACTIVE){
         return state.set('clickHeader',action.data)

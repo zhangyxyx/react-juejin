@@ -155,7 +155,8 @@ export const BoilRightTopic=styled.div`
     min-height:113px;
     background-color:#fff;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
-    padding:0px 10px
+    padding:0px 10px;
+    margin-top:20px;
 `
 export const BoilRightTopicTitle=styled.div`
     width:100%;
@@ -166,8 +167,14 @@ export const BoilRightTopicTitleEvery=styled.div`
     font-size:13px;
     float:left;
 `
-export const BoilRightTopicConItem=styled.div`
+export const BoilRightTopicCon=styled.div`
     width:100%;
+    height:62px;
+    font-size:15px;
+    color:#909090;
+`
+export const BoilRightTopicConItem=styled.div`
+    width:calc(100% - 80px);
     height:62px;
     line-height:62px;
     font-size:15px;

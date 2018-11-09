@@ -35,11 +35,11 @@ class Booklet extends React.Component{
                                this.props.list.map((item)=>{
                                     return (
                                         <BookletLeftItem key={item.id}>
-                                            <BookletLeftItemLeft><img style={{"width":"100%","height":"100%"}} src='https://user-gold-cdn.xitu.io/2018/10/23/166a0387b91066b9?imageView2/1/w/200/h/280/q/95/format/webp/interlace/1'/></BookletLeftItemLeft>
+                                            <BookletLeftItemLeft><img style={{"width":"100%","height":"100%"}} src={item.img}/></BookletLeftItemLeft>
                                             <BookletLeftItemRight>
-                                                <BookletLeftItemRightTop>{item.val}</BookletLeftItemRightTop>
-                                                <BookletLeftItemRightTop style={{"height":"60px"}}>{item.con}</BookletLeftItemRightTop>
-                                                <BookletLeftItemRightTop>{item.val}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop>{item.title}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"height":"60px"}}>{item.desc}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop>价格：{item.price}</BookletLeftItemRightTop>
                                             </BookletLeftItemRight>
                                     </BookletLeftItem>
                                     )

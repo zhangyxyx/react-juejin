@@ -1,0 +1,41 @@
+{
+    "s":1,
+    "m":"ok",
+    "d":{
+        "total":2,
+        "banner":[
+            {
+                "objectId":"5be25d51f265da6179744d34",
+                "description":"[产品更新] 掘金新动态上线啦，follow me~",
+                "startedAt":"2018-11-07T16:00:00.000Z",
+                "type":"url",
+                "title":"[产品更新] 掘金新动态上线啦，follow me~",
+                "relatedObjectId":null,
+                "url":"https://juejin.im/post/5be1092a6fb9a049af6cb7e1",
+                "position":"hero",
+                "screenshot":"https://user-gold-cdn.xitu.io/154156156688874d69e2aa80ff67cbb964249087238a0.jpg",
+                "platform":"web",
+                "endedAt":"2018-11-09T16:00:00.000Z",
+                "createdAt":"2018-11-07T03:34:41.545Z",
+                "updatedAt":"2018-11-07T04:05:07.141Z",
+                "osTime":"2018-11-09T02:10:36.336Z"
+            },
+            {
+                "objectId":"5bd97b3be51d451f0160ce7d",
+                "description":"腾讯云产品会场新购3折起，购买时长越长越优惠！",
+                "startedAt":"2018-11-05T07:24:41.097Z",
+                "type":"url",
+                "title":"腾讯云产品11.11会场新购3折起，购买时长越长越优惠！",
+                "relatedObjectId":null,
+                "url":"https://cloud.tencent.com/act/double11?fromSource=gwzcw.1608281.1608281.1608281",
+                "position":"hero",
+                "screenshot":"https://user-gold-cdn.xitu.io/1541402686436d5bd390d5f1bf1d61317a069f409eea5.jpg",
+                "platform":"web",
+                "endedAt":"2018-11-11T16:00:00.000Z",
+                "createdAt":"2018-10-31T09:51:55.073Z",
+                "updatedAt":"2018-11-05T07:25:54.695Z",
+                "osTime":"2018-11-09T02:10:36.336Z"
+            }
+        ]
+    }
+}

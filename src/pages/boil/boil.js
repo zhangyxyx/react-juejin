@@ -6,7 +6,7 @@ import {
     BoilText,BoilTextArea,BoilTextBottom,BoilTextBottomItem,BoilTextBottomBtn,
     BoilHeader,BoilHeaderItem,
     BoilList,BoilConItem,BoilConLeft,BoilConRight,BoilConRightEvery,BoilConBottom,BoilConBottomItem,BoilConItemCon,
-    BoilRight,BoilRightTop1,BoilRightTop2,BoilRightTop2Every,BoilRightTopic,BoilRightTopicTitle,BoilRightTopicTitleEvery,BoilRightTopicConItem,
+    BoilRight,BoilRightTop1,BoilRightTop2,BoilRightTop2Every,BoilRightTopic,BoilRightTopicTitle,BoilRightTopicTitleEvery,BoilRightTopicCon,BoilRightTopicConItem,
     
 } from './style.js'
 import {connect} from 'react-redux'
@@ -41,15 +41,16 @@ class Boil extends React.Component{
                                 return (
                                     <BoilConItem key={item.id}>
                                         <BoilConItemCon>
-                                            <BoilConLeft><img src={item.pic} style={{'height':'100%','width':'100%'}}/></BoilConLeft>
+                                            <BoilConLeft><img src={item.node.actors[0].avatarLarge} style={{'height':'100%','width':'100%'}}/></BoilConLeft>
                                             <BoilConRight>
-                                                <BoilConRightEvery>{item.user}</BoilConRightEvery>
-                                                <BoilConRightEvery>{item.user}</BoilConRightEvery>
+                                                <BoilConRightEvery>{item.node.actors[0].username}</BoilConRightEvery>
+                                                <BoilConRightEvery>{item.node.actors[0].company}|{item.node.actors.jobTitle}</BoilConRightEvery>
+                                                <BoilConRightEvery>{item.node.targets[0].title}</BoilConRightEvery>
                                             </BoilConRight>
                                         </BoilConItemCon>
                                         <BoilConBottom>
-                                            <BoilConBottomItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe627;</i>{item.like}</BoilConBottomItem>
-                                            <BoilConBottomItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe609;</i>{item.common}</BoilConBottomItem>
+                                            <BoilConBottomItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe627;</i>{item.node.targets[0].likeCount}</BoilConBottomItem>
+                                            <BoilConBottomItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe609;</i>{item.node.targets[0].commentsCount}</BoilConBottomItem>
                                             <BoilConBottomItem><i className="iconfont" style={{'marginRight':"5px"}}>&#xe645;</i>分享</BoilConBottomItem>
                                         </BoilConBottom>
                                     </BoilConItem>
@@ -74,6 +75,22 @@ class Boil extends React.Component{
                             <img style={{"float":"left","width":"40px","margin":"5px 10px 0px 5px"}} src="https://user-gold-cdn.xitu.io/2018/3/28/1626c1bc2798945c?imageView2/1/w/80/h/80/q/85/format/webp/interlace/1"/>
                             <BoilRightTopicConItem>每天一道算法题</BoilRightTopicConItem>
                         </BoilRightTopic>
+                        <BoilRightTopic>
+                            <BoilRightTopicTitle>
+                                <BoilRightTopicTitleEvery>更多话题</BoilRightTopicTitleEvery>
+                            </BoilRightTopicTitle>
+                            {
+                                this.props.topic.map((item)=>{
+                                    return (
+                                        <BoilRightTopicCon>
+                                            <img style={{"float":"left","width":"40px","margin":"5px 10px 0px 5px"}} src={item.icon}/>
+                                            <BoilRightTopicConItem>{item.title}</BoilRightTopicConItem>
+                                        </BoilRightTopicCon>
+                                    )
+                                })
+                            }
+                            
+                        </BoilRightTopic>
                     </BoilRight>
                 </BoilCon>
                 
@@ -93,7 +110,8 @@ const mapStateToProps=(state)=>{
         
 
         list:state.get('home').get('list'),
-        user:state.get('home').get('user')
+        user:state.get('home').get('user'),
+        topic:state.get('home').get('topic')
     }
 }
 const mapDispatchToProps=(dispatch)=>{

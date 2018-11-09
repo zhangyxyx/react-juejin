@@ -1,0 +1,28 @@
+{
+    "s":1,
+    "m":"ok",
+    "d":{
+        "total":1,
+        "banner":[
+            {
+                "objectId":"5b21dc1de51d4506c7669b65",
+                "description":"与大厂面对面，零距离。
+发布格式：
+JD + 公司环境配图
+（话题下非相关性沸点会做折叠处理，比如只发一句话加链接）",
+                "startedAt":"2018-06-13T16:00:00.000Z",
+                "type":"topic",
+                "title":"内推信息",
+                "relatedObjectId":"5abb61e1092dcb4620ca3322",
+                "url":"https://juejin.im",
+                "position":"topic-banner",
+                "screenshot":"https://user-gold-cdn.xitu.io/15299174390399ac285f3d86124dbb5b687ede6436650.jpg",
+                "platform":"web",
+                "endedAt":"2018-12-30T16:00:00.000Z",
+                "createdAt":"2018-06-14T03:08:13.642Z",
+                "updatedAt":"2018-06-25T09:07:07.268Z",
+                "osTime":"2018-11-09T02:15:56.995Z"
+            }
+        ]
+    }
+}

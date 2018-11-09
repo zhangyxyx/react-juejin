@@ -1,0 +1,271 @@
+{
+    "s":1,
+    "m":"ok",
+    "d":{
+        "2018-11-15":{
+            "count":1,
+            "list":[
+                {
+                    "title":"IM 快速搭建即时通讯实战",
+                    "eventUrl":"https://mctalk.yunxin.163.com/details/20"
+                }
+            ]
+        },
+        "2018-11-18":{
+            "count":2,
+            "list":[
+                {
+                    "title":"2018传智汇人工智能大数据精英大会",
+                    "eventUrl":"http://www.itczh.com/code.html?juejin"
+                },
+                {
+                    "title":"Flink China Meetup",
+                    "eventUrl":"http://t.cn/EwJwxHK"
+                }
+            ]
+        },
+        "2018-11-23":{
+            "count":3,
+            "list":[
+                {
+                    "title":"2018GIAC全球互联网架构大会 ",
+                    "eventUrl":"http://2018.thegiac.com/?qd=juejin"
+                },
+                {
+                    "title":"技术无界 智赋未来 | 2018 携程技术峰会",
+                    "eventUrl":"http://techsummit.ctrip.com/"
+                },
+                {
+                    "title":"AI产业技术的渗透与融合 | NIUDAY",
+                    "eventUrl":"http://www.huodongxing.com/event/2464773427600"
+                }
+            ]
+        },
+        "2018-11-6":{
+            "count":1,
+            "list":[
+                {
+                    "title":"2018 第四范式人工智能 + 新媒体论坛",
+                    "eventUrl":"http://t.cn/EzBGv5b"
+                }
+            ]
+        },
+        "2018-11-9":{
+            "count":2,
+            "list":[
+                {
+                    "title":"中国 DAPP 开发者大会",
+                    "eventUrl":"https://www.bagevent.com/event/1871915"
+                },
+                {
+                    "title":"大数据技术实践与分享",
+                    "eventUrl":"http://www.huodongxing.com/event/7463177556600?qd=juejin"
+                }
+            ]
+        },
+        "2018-11-7":{
+            "count":1,
+            "list":[
+                {
+                    "title":"ArcBlock Technical Learning Series 第七期",
+                    "eventUrl":"https://zoom.us/webinar/register/WN_ezupz-YRSYuVQUeb1RjTZQ"
+                }
+            ]
+        },
+        "2018-11-25":{
+            "count":2,
+            "list":[
+                {
+                    "title":"2018 小程序开发者沙龙 ",
+                    "eventUrl":"http://www.huodongxing.com/event/5464175274800"
+                },
+                {
+                    "title":"DevFest & TensorFlow Day 2018 ",
+                    "eventUrl":"http://www.huodongxing.com/event/2458904443900"
+                }
+            ]
+        },
+        "2018-11-8":{
+            "count":1,
+            "list":[
+                {
+                    "title":"AI 开发者大会",
+                    "eventUrl":"https://ai2018.csdn.net/?utm_source=wmgg"
+                }
+            ]
+        },
+        "2018-11-10":{
+            "count":7,
+            "list":[
+                {
+                    "title":"Elastic 中国开发者大会 2018",
+                    "eventUrl":"https://www.bagevent.com/event/elastic"
+                },
+                {
+                    "title":"布洛克城小应用开发者大赛",
+                    "eventUrl":"https://blockcity.gxchain.cn/conference_pc/?channel=juejin"
+                },
+                {
+                    "title":"2018 | 成都 WEB 前端交流大会",
+                    "eventUrl":"https://web-conf.tk/2018/"
+                },
+                {
+                    "title":"2018 FCC | 全国联动技术大会",
+                    "eventUrl":"https://mp.weixin.qq.com/s/4yRZINLL21xeRINduV61-Q"
+                },
+                {
+                    "title":"Nervos & Celer | 下一代区块链网络",
+                    "eventUrl":"http://www.huodongxing.com/event/2464174621400"
+                },
+                {
+                    "title":"开发者的以太坊进阶指南 | Jeth 以太坊系列线下活动第四期北京场",
+                    "eventUrl":"https://juejin.im/post/5bdc3f5f51882516f9346df3"
+                },
+                {
+                    "title":"360 区块链技术开放日",
+                    "eventUrl":"http://www.huodongxing.com/event/6463738994100"
+                }
+            ]
+        },
+        "2018-11-4":{
+            "count":3,
+            "list":[
+                {
+                    "title":"PyCon China 2018 中国 Python 开发者大会",
+                    "eventUrl":"http://www.huodongxing.com/go/pycon2018hangzhou"
+                },
+                {
+                    "title":"Flink China Meetup",
+                    "eventUrl":"http://www.huodongxing.com/event/1463206779300"
+                },
+                {
+                    "title":"Girls Coding Day in College ：女性编程日",
+                    "eventUrl":"http://www.huodongxing.com/news/980772980840"
+                }
+            ]
+        },
+        "2018-11-29":{
+            "count":1,
+            "list":[
+                {
+                    "title":"领域驱动设计中国峰会 2018",
+                    "eventUrl":"http://ddd-china.com/index.html#"
+                }
+            ]
+        },
+        "2018-11-3":{
+            "count":7,
+            "list":[
+                {
+                    "title":"敏捷开发与创新研发管理 | Tech Talks",
+                    "eventUrl":"http://www.hdb.com/dis/0ntvn6jiao"
+                },
+                {
+                    "title":"微服务实践沙龙 | 易经布道",
+                    "eventUrl":"http://www.huodongxing.com/event/4459877372500"
+                },
+                {
+                    "title":"360技术嘉年华第七季 | 测试之美",
+                    "eventUrl":"http://www.huodongxing.com/event/8461293892200"
+                },
+                {
+                    "title":"中国创新技术峰会",
+                    "eventUrl":"https://www.bagevent.com/event/1904407"
+                },
+                {
+                    "title":"Cloud Native Days 中国巡回 Meetup",
+                    "eventUrl":"http://www.huodongxing.com/event/4462331588500"
+                },
+                {
+                    "title":"安卓巴士全球开发者论坛",
+                    "eventUrl":"http://www.hdb.com/party/qjnx2.html?hdb_pos=manager_info"
+                },
+                {
+                    "title":"HBase 技术与应用实践",
+                    "eventUrl":"http://t.cn/EZjiZ1t"
+                }
+            ]
+        },
+        "2018-11-16":{
+            "count":2,
+            "list":[
+                {
+                    "title":"2018 FinTech 领袖峰会",
+                    "eventUrl":"http://fintech.itshare.org.cn/"
+                },
+                {
+                    "title":"安卓绿色联盟开发者大会",
+                    "eventUrl":"https://www.bagevent.com/event/1878200?bag_track=bagevent"
+                }
+            ]
+        },
+        "2018-11-17":{
+            "count":6,
+            "list":[
+                {
+                    "title":"极光开发者大会",
+                    "eventUrl":"http://www.huodongxing.com/event/1458603955900?qd=JJSQ"
+                },
+                {
+                    "title":"比原链全球开发者大会 | 智能之约 链动未来",
+                    "eventUrl":"http://www.huodongxing.com/event/6461358232900"
+                },
+                {
+                    "title":"京东在供应链领域的区块链技术解决方案 ",
+                    "eventUrl":"http://www.huodongxing.com/event/3464394711011"
+                },
+                {
+                    "title":"Design Sprint Hackathon",
+                    "eventUrl":"http://www.huodongxing.com/event/4458765453500"
+                },
+                {
+                    "title":"第81期OSC源创会——小程序专场",
+                    "eventUrl":"https://www.oschina.net/event/2288715?origin=111"
+                },
+                {
+                    "title":"区块链游戏的设计与开发",
+                    "eventUrl":"http://www.huodongxing.com/event/3464329597400"
+                }
+            ]
+        },
+        "2018-11-24":{
+            "count":3,
+            "list":[
+                {
+                    "title":"Ontology BeiJing Tech Workshop",
+                    "eventUrl":"http://www.huodongxing.com/event/6458559053600"
+                },
+                {
+                    "title":"第二届VueConf",
+                    "eventUrl":"https://vue.w3ctech.com/"
+                },
+                {
+                    "title":"网易 MCtalk 技术沙龙",
+                    "eventUrl":"https://hubble.netease.com/sl/aaaawT"
+                }
+            ]
+        },
+        "2018-11-13":{
+            "count":1,
+            "list":[
+                {
+                    "title":"KubeCon + CloudNativeCon",
+                    "eventUrl":"https://events.linuxfoundation.cn/events/kubecon-cloudnativecon-china-2018/?bag_track=channel-Juejin&utm_source=channel-Juejin&utm_medium=channel-referral&utm_campaign=kccnc%20china"
+                }
+            ]
+        },
+        "2018-11-30":{
+            "count":2,
+            "list":[
+                {
+                    "title":"全球敏捷运维峰会",
+                    "eventUrl":"https://www.bagevent.com/event/1977324"
+                },
+                {
+                    "title":"2018TOP100 全球软件案例研究峰会",
+                    "eventUrl":"http://www.top100summit.com/?qd=juejin"
+                }
+            ]
+        }
+    }
+}

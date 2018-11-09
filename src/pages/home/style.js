@@ -136,13 +136,20 @@ export const HomeTopicListItemLeftTitle=styled.div`
 `
 export const HomeTopicListItemLeftTitleEvery=styled.div`
     font-size:13px;
-    color:#ccc;
+    color:#b2bac2;
     margin:0px 5px;
     float:left;
 `
-export const HomeTopicListItemLeftCon=styled.h4`
+export const HomeTopicListItemLeftCon=styled.h3`
     width:100%;
     height:22px;
+    overflow:hidden;
+    word-break:break-all; 
+    margin:10px 0px;
+`
+export const HomeTopicListItemLeftConContent=styled.div`
+    width:100%;
+    height:45px;
     overflow:hidden;
     word-break:break-all; 
 `
@@ -224,7 +231,7 @@ export const HomeUser=styled.div`
 `
 export const HomeUserList=styled.div`
     width:100%;
-    height:47px;
+    height:70px;
     margin-top:15px;
 `
 export const HomeUserListLeft=styled.div`
@@ -235,13 +242,14 @@ export const HomeUserListLeft=styled.div`
     background:url('//upload.jianshu.io/users/upload_avatars/3884693/b425c707-d998-46a6-98b1-9b1e241513c3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp')
 `
 export const HomeUserListCon=styled.div`
+    width:calc(80% - 45px);
     margin-left:10px;
     height:47px;
     float:left;
 `
 export const HomeUserListConTop=styled.div`
     height:30px;
-    font-size:14px;
+    font-size:13px;
 `
 export const HomeUserListConBottom=styled.div`
     width:100%;
