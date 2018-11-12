@@ -24,43 +24,31 @@ export const sortleft=(data)=>({
 
     ]
 }) 
- 
-export const showtopiclist=(data)=>({
+//banner
+export const showtopic=(data)=>({
     type:constants.SHOW_TOPIC_LIST,
-    data:[
-        {id:'1',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-        {id:'2',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-        {id:'3',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-        {id:'4',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-        {id:'5',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-        {id:'6',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-    ]
+    data:data
 })
+export const getshowtopic=()=>{
+    return (dispatch) => {
+        axios.get('http://localhost:3000/api/opensource/opensource_banner.json').then(function(response){
+            console.log(response)
+            var data=eval('(' + response.data + ')').d.entrylist;
+            dispatch(showtopic(data))
+        }) 
+    }
+}
+//列表数据
 export const showlist=(data)=>({
     type:constants.SHOW_LIST,
     data:data
 })
 export const getshowlist=(id)=>{
     return (dispatch) => {
-        var result=[
-            {id:'1',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-            {id:'2',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-            {id:'3',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-            {id:'4',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-            {id:'5',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-            {id:'6',val:'skidding',sort:'javascript',like:234,share:20,con:'Searchable library of React testing examples'},
-        ]
-        dispatch(showlist(result))
-        // axios.get('/juejin/question').then((res)=>{
-        //     console.log(res)
-        //     console.log(res.data)
-
-        //     var str=eval('('+ res.data +')')
-        //     const result=str.data;
-        //     console.log(result)
-        //     var 
-            
-        // })
+        axios.get('http://localhost:3000/api/opensource/opensource_list.json').then(function(response){
+            var data=eval('(' + response.data + ')').d.repoList;
+            dispatch(showlist(data))
+        }) 
     }
 }
 export const showuserlist=(data)=>({

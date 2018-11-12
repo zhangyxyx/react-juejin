@@ -41,10 +41,10 @@ class Home extends React.Component{
                                 this.props.list.map((item)=>{
                                     return(
                                     <ActivityConListItem key={item.id}>
-                                        <img style={{"width":"100%"}}src='https://user-gold-cdn.xitu.io/1537241857260299e37fad63e2891cac2577d56537978.jpg?imageView2/1/w/940/h/560/q/85/format/webp/interlace/1'/>
-                                        <ActivityConListItemTitle>{item.val}</ActivityConListItemTitle>
-                                        <ActivityConListItemP><i className="iconfont" style={{'marginRight':"5px"}}>&#xe608;</i>{item.time}</ActivityConListItemP>
-                                        <ActivityConListItemP><i className="iconfont" style={{'marginRight':"5px"}}>&#xe629;</i>{item.address}</ActivityConListItemP>
+                                        <img style={{"width":"100%"}} src={item.screenshot}/>
+                                        <ActivityConListItemTitle>{item.title}</ActivityConListItemTitle>
+                                        <ActivityConListItemP><i className="iconfont" style={{'marginRight':"5px"}}>&#xe608;</i>{item.startTime}</ActivityConListItemP>
+                                        <ActivityConListItemP><i className="iconfont" style={{'marginRight':"5px"}}>&#xe629;</i>{item.city}</ActivityConListItemP>
                                     </ActivityConListItem>
                                     )
                                     
@@ -65,14 +65,14 @@ class Home extends React.Component{
 }
 const mapStateToProps=(state)=>{
     return{
-        homeheader:state.get('home').get('homeheader'),
-        sortleft:state.get('home').get('sortleft'),
-        sortright:state.get('home').get('sortright'),
+        homeheader:state.get('activity').get('homeheader'),
+        sortleft:state.get('activity').get('sortleft'),
+        sortright:state.get('activity').get('sortright'),
         
-        topic:state.get('home').get('topic'),
-        list:state.get('home').get('list'),
-        user:state.get('home').get('user'),
-        clickHeader:state.get('home').get('clickHeader'),
+        topic:state.get('activity').get('topic'),
+        list:state.get('activity').get('list'),
+        user:state.get('activity').get('user'),
+        clickHeader:state.get('activity').get('clickHeader'),
     }
 }
 const mapDispatchToProps=(dispatch)=>{

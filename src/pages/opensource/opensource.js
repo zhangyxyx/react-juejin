@@ -7,7 +7,7 @@ import {
     HomeHeader,HomeLeftSortItem,
     OpenSourceBanner,
     OpenSourceTitle,OpenSourceList,OpenSourceListItem,OpenSourceListItemLeft,OpenSourceListItemRight,OpenSourceListItemRightP,OpenSourceListItemRightPSpan,
-
+    HomeUserListConTopSpan,OpenSourceBannerItem,OpenSourceBannerItemTitle
 } from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
@@ -21,7 +21,23 @@ class Home extends React.Component{
                 <HomeCon>
                     <HomeHeader className='homeCon'>
                     <HomeLeft>
-                        <OpenSourceBanner></OpenSourceBanner>
+                        <OpenSourceBanner>
+                            {
+                                this.props.topic.map((item,index)=>{
+                                    if(index!=0){
+                                        return;
+                                    }
+                                    return(
+                                        <OpenSourceBannerItem key={item.objectId}>
+                                            <OpenSourceBannerItemTitle>
+                                                {item.title}
+                                            </OpenSourceBannerItemTitle>
+                                        </OpenSourceBannerItem>
+                                    ) 
+                                    
+                                })
+                            }
+                        </OpenSourceBanner>
                         <OpenSourceTitle>
                             {
                                 this.props.sortleft.map((item,index)=>{
@@ -38,14 +54,14 @@ class Home extends React.Component{
                             {this.props.list.map((item)=>{
                                 return (
                                    <OpenSourceListItem key={item.id}>
-                                       <OpenSourceListItemLeft><img src="https://user-gold-cdn.xitu.io/2018/3/28/1626c1bc2798945c?imageView2/1/w/80/h/80/q/85/format/we" style={{"width":"100%"}}/></OpenSourceListItemLeft>
+                                       <OpenSourceListItemLeft><img src={item.userAvatarUrl} style={{"width":"100%"}}/></OpenSourceListItemLeft>
                                        <OpenSourceListItemRight>
-                                            <OpenSourceListItemRightP>{item.val}</OpenSourceListItemRightP>
-                                            <OpenSourceListItemRightP>{item.con}</OpenSourceListItemRightP>
+                                            <OpenSourceListItemRightP style={{"height":"35px","fontSize":"20px","fontWeight":"500","color":"#007fff"}}>{item.repoName}</OpenSourceListItemRightP>
+                                            <OpenSourceListItemRightP style={{"margin":"10px 0px"}}>{item.description}</OpenSourceListItemRightP>
                                            <OpenSourceListItemRightP>
-                                               <OpenSourceListItemRightPSpan>{item.sort}</OpenSourceListItemRightPSpan>
-                                               <OpenSourceListItemRightPSpan><i className="iconfont" style={{"width":"10px"}}>&#xe66a;</i>{item.like}</OpenSourceListItemRightPSpan>
-                                               <OpenSourceListItemRightPSpan><i className="iconfont" style={{"width":"10px"}}>&#xe67f;</i>{item.share}</OpenSourceListItemRightPSpan>
+                                               <OpenSourceListItemRightPSpan>{item.language}</OpenSourceListItemRightPSpan>
+                                               <OpenSourceListItemRightPSpan><i className="iconfont" style={{"width":"10px","color":"#b3b0b0"}}>&#xe66a;</i>{item.stars}</OpenSourceListItemRightPSpan>
+                                               <OpenSourceListItemRightPSpan><i className="iconfont" style={{"width":"10px","color":"#b3b0b0"}}>&#xe67f;</i>{item.fork}</OpenSourceListItemRightPSpan>
                                            </OpenSourceListItemRightP>
                                        </OpenSourceListItemRight>
                                    </OpenSourceListItem>
@@ -56,17 +72,16 @@ class Home extends React.Component{
                     <HomeRight>
                         {      
                             this.props.user.map((item,index)=>{
-                                console.log(this.props.user[index].sort)
                                 return (
                                     <HomeUserList key={item.id}>
                                     <HomeUserListCon>
                                         <HomeUserListConTop>{item.val}</HomeUserListConTop>
-                                        {/* {
+                                        {
                                             this.props.user[index].sort.map((sortItem)=>{
                                                 return <HomeUserListConTopSpan key={sortItem.id}>{sortItem.con}</HomeUserListConTopSpan>
                                             })
                                         }
-                                         */}
+                                        
                                     </HomeUserListCon>
                                     </HomeUserList>
                                 )
@@ -86,13 +101,13 @@ class Home extends React.Component{
 }
 const mapStateToProps=(state)=>{
     return{
-        homeheader:state.get('home').get('homeheader'),
-        sortleft:state.get('home').get('sortleft'),
-        sortright:state.get('home').get('sortright'),
+        homeheader:state.get('opensource').get('homeheader'),
+        sortleft:state.get('opensource').get('sortleft'),
+        sortright:state.get('opensource').get('sortright'),
         
-        topic:state.get('home').get('topic'),
-        list:state.get('home').get('list'),
-        user:state.get('home').get('user')
+        topic:state.get('opensource').get('topic'),
+        list:state.get('opensource').get('list'),
+        user:state.get('opensource').get('user'),
     }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -102,9 +117,9 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch(actionCreators.homeheader())
             dispatch(actionCreators.sortleft())
             
-            dispatch(actionCreators.showtopiclist())
-            //dispatch(actionCreators.showlist())
-            dispatch(actionCreators.getshowlist('1'))
+            dispatch(actionCreators.getshowtopic())//banner
+            dispatch(actionCreators.getshowlist('1'))//列表
+            dispatch(actionCreators.showuserlist())//右边分类
             
         },
         clickChangeList(id){

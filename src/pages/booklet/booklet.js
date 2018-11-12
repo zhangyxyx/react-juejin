@@ -37,9 +37,10 @@ class Booklet extends React.Component{
                                         <BookletLeftItem key={item.id}>
                                             <BookletLeftItemLeft><img style={{"width":"100%","height":"100%"}} src={item.img}/></BookletLeftItemLeft>
                                             <BookletLeftItemRight>
-                                                <BookletLeftItemRightTop>{item.title}</BookletLeftItemRightTop>
-                                                <BookletLeftItemRightTop style={{"height":"60px"}}>{item.desc}</BookletLeftItemRightTop>
-                                                <BookletLeftItemRightTop>价格：{item.price}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"font-size":"20px",}}>{item.title}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"font-size":"15px","height":"23px","color":"#7d7c7c",'overflow':"hidden","white-space":"nowrap","text-overflow":"ellipsis"}}>{item.desc}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"font-size":"13px","height":"23px","color":"#7d7c7c"}}>{item.userData.username}&nbsp;●&nbsp;{item.userData.company}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"color":"#a09f9f"}}>￥:{item.price}&nbsp;&nbsp;&nbsp;{item.buyCount}人已购买</BookletLeftItemRightTop>
                                             </BookletLeftItemRight>
                                     </BookletLeftItem>
                                     )
@@ -54,8 +55,8 @@ class Booklet extends React.Component{
                                 <img src='https://b-gold-cdn.xitu.io/v3/static/img/wechat-qr.f1926e7.png' style={{'marginTop':'10px','width':'100%','height':"95px"}}/>
                             </BookletRightItem>
                             <BookletRightItem className='three'>
-                                <BookletRightBottom><i className="iconfont">&#xe604;</i>成为作者</BookletRightBottom>
-                                <BookletRightBottom><i className="iconfont">&#xe619;</i>建议反馈</BookletRightBottom>
+                                <BookletRightBottom><i className="iconfont" >&#xe604;</i>成为作者</BookletRightBottom>
+                                <BookletRightBottom><i className="iconfont" >&#xe619;</i>建议反馈</BookletRightBottom>
                             </BookletRightItem>
                             
                        </BookletRight>

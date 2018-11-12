@@ -158,6 +158,15 @@ export const OpenSourceBanner=styled.div`
     height:144px;
     background:#fff;
 `
+export const OpenSourceBannerItem=styled.div`
+    width:100%;
+    height:144px;
+    float:left;
+`
+export const OpenSourceBannerItemTitle=styled.div`
+    width:100%;
+    height:40px;
+`
 
 export const OpenSourceTitle=styled.div`
     width:100%;
@@ -189,8 +198,9 @@ export const OpenSourceListItemRight=styled.div`
 `
 export const OpenSourceListItemRightP=styled.div`
     width:100%;
-    height:40px;
-    line-height:40px;
+    height:22px;
+    overflow:hidden;
+    
 `
 export const OpenSourceListItemRightPSpan=styled.div`
     width:80px;

@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const HomeCon=styled.div`
-   
-
 ` 
 //header
 export const HomeHeader=styled.div`
@@ -51,12 +49,13 @@ export const BookletLeft=styled.div`
 export const BookletLeftItem=styled.div`
     width:100%;
     height:191px;
-    border:1px solid #ccc;
-
+    border:1px solid #efefef;
+    padding:20px;
+    box-sizing:border-box
 ` 
 export const BookletLeftItemLeft=styled.div`
-    width:150px;
-    height:191px;
+    width:121px;
+    height:149px;
     float:left;
     background-color:#fff;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
@@ -69,7 +68,7 @@ export const BookletLeftItemRight=styled.div`
 ` 
 export const BookletLeftItemRightTop=styled.div`
     width:100%;
-    height:26px;
+    margin:5px 0px;
 ` 
 //Right
 export const BookletRight=styled.div`
@@ -81,27 +80,34 @@ export const BookletRight=styled.div`
 export const BookletRightItem=styled.div`
     width:100%;
     padding:10px;
-    border:1px solid #ccc;
+    border:1px solid #efefef;
     margin-bottom:10px;
     &.one{
         background-color:#fff;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+        box-shadow: 0 1px 2px 0 rgba(239,239,239,.08);
     }
     &.two{
         height:125px; 
         background-color:#fff;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,.05); 
+        box-shadow: 0 1px 2px 0 rgba(239,239,239,.08); 
     }
     &.three{
-        height:90px;  
+        height:55px;  
         background-color:#fff;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+        box-shadow: 0 1px 2px 0 rgba(239,239,239,.08);
+
     }
 
 ` 
 export const BookletRightBottom=styled.div`
     width:50%;
     float:left;
-    height:90px;
+    text-align:center;
+    i {
+        width:100%;
+        display:block;
+        font-size:30px;
+        color:#007fff
+    }
 ` 
 

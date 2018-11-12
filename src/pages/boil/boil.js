@@ -103,6 +103,7 @@ class Boil extends React.Component{
     }
 }
 const mapStateToProps=(state)=>{
+    console.log(state.get('home').get('list'))
     return{
         homeheader:state.get('home').get('homeheader'),
         sortleft:state.get('home').get('sortleft'),

@@ -42,20 +42,11 @@ export const showlist=(data)=>({
     data:data
 })
 export const getshowlist=(id)=>{
-    return (dispatch) => {
-        var result=[
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-            {id:'1',val:'Apache Kylin Meetup',time:'2018-10-25',address:'北京'},
-        ]
-        dispatch(showlist(result))
+    return (dispatch) => { //activity_list
+        axios.get('http://localhost:3000/api/activity/activity_list.json').then(function(response){
+            var data=eval('(' + response.data + ')').d;
+            dispatch(showlist(data))
+        })   
     }
 }
 export const showuserlist=(data)=>({

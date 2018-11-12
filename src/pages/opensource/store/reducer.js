@@ -19,7 +19,6 @@ export default (state=defaultState,action)=>{
         return state.set('topic',action.data)
     }
     if(action.type===constants.SHOW_LIST){
-        console.log(action.data)
         return state.set('list',action.data)
     }
     if(action.type===constants.SHOW_USER_LIST){
