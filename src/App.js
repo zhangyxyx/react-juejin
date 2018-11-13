@@ -32,6 +32,7 @@ class App extends Component {
               <Route path='/juejin/booklet/:id' exact component={Booklet}></Route>
 
               <Route path="/juejin/detail/:id" exact component={Detail}></Route>
+              
               <Route path="/juejin/Opensource" exact component={Opensource}></Route>
 
               <Route path="/juejin/activity" exact component={Activity}></Route>

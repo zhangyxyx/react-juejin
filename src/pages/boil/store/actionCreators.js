@@ -45,9 +45,10 @@ export const showlist=(data)=>({
     type:constants.SHOW_LIST,
     data:data
 })
-export const getshowlist=(id)=>{
+export const getshowlist=()=>{
     return (dispatch) => {
         axios.get('http://localhost:3000/api/boil/boil_list.json').then((response)=>{
+            console.log(eval('(' + response.data + ')'))
             var data=eval('(' + response.data + ')').data.followingActivityFeed.items.edges
             dispatch(showlist(data))
         })

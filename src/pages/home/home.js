@@ -58,8 +58,11 @@ class Home extends React.Component{
                         </HomeLeftSort>
                         <HomeTopicList>
                             {this.props.list.map((item)=>{
+                                if(!item.category){
+                                    return;
+                                }
                                 return (
-                                    <HomeTopicListItem key={item.id}>
+                                    <HomeTopicListItem key={item.category.id}>
                                         <Link to="/juejin/detail">
                                         <HomeTopicListItemLeft>
                                             <HomeTopicListItemLeftTitle>
@@ -96,6 +99,9 @@ class Home extends React.Component{
                             </HomeUserTitle>
                             {
                                 this.props.book.map((item)=>{
+                                    if(!item.objectId){
+                                        return;
+                                    }
                                     return (
                                         <HomeUserList key={item.objectId}>
                                         <HomeUserListLeft><img style={{"width":"100%"}} src={item.img}/></HomeUserListLeft>
@@ -115,6 +121,9 @@ class Home extends React.Component{
                             </HomeUserTitle>
                             {
                                 this.props.user.map((item)=>{
+                                    if(!item.objectId){
+                                        return;
+                                    }
                                     return (
                                         <HomeUserList key={item.objectId}>
                                         <HomeUserListLeft><img style={{"width":"100%"}} src={item.avatarLarge}/></HomeUserListLeft>
@@ -161,14 +170,13 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch(actionCreators.homeheader())
             dispatch(actionCreators.sortleft())
             dispatch(actionCreators.showtopiclist())
-            //dispatch(actionCreators.showlist())
+  
             dispatch(actionCreators.getshowlist())//显示列表
             dispatch(actionCreators.showuserlist())//显示感兴趣的人
             dispatch(actionCreators.showbooklist())//显示小册
         },
         clickChangeList(id){
             dispatch(actionCreators.headerActive(id))
-            //dispatch(actionCreators.getshowlist(id))
         }
         
     }

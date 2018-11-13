@@ -33,6 +33,9 @@ class Booklet extends React.Component{
                        <BookletLeft>
                            {
                                this.props.list.map((item)=>{
+                                    if(!item.id){
+                                        return;
+                                    }
                                     return (
                                         <BookletLeftItem key={item.id}>
                                             <BookletLeftItemLeft><img style={{"width":"100%","height":"100%"}} src={item.img}/></BookletLeftItemLeft>

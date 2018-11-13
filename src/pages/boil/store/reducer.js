@@ -5,25 +5,22 @@ const defaultState=fromJS({
     homeheader:[],
     sortleft:[],
     topic:[],
-    list:[],
+    boli_list:[],
     user:[]
 });
 export default (state=defaultState,action)=>{
     if(action.type===constants.HOME_HEADER){
         return state.set('homeheader',action.data) 
     }
-    if(action.type===constants.SORT_LEFT){
-        return state.set('sortleft',action.data) 
-    }
-    // if(action.type===constants.SORT_RIGHT){
-    //     return state.set('sortright',action.data) 
-    // }
-    
     if(action.type===constants.SHOW_TOPIC_LIST){
         return state.set('topic',action.data)
     }
     if(action.type===constants.SHOW_LIST){
-        return state.set('list',action.data)
+        console.log(action.data)
+        // return state.merge({
+        //     boli_list:action.data
+        // })
+        return state.set('boli_list',action.data.slice())
     }
     if(action.type===constants.SHOW_USER_LIST){
         return state.set('user',action.data)

@@ -39,6 +39,9 @@ class Home extends React.Component{
                         <ActivityConList>
                             {
                                 this.props.list.map((item)=>{
+                                    if(!item.id){
+                                        return;
+                                    }
                                     return(
                                     <ActivityConListItem key={item.id}>
                                         <img style={{"width":"100%"}} src={item.screenshot}/>

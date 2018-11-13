@@ -13,10 +13,14 @@ import {connect} from 'react-redux'
 import {actionCreators} from './store'
 
 class Boil extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
             <React.Fragment>
-                <Header parentProp={this.props} key="1"/>
+                <Header parentProp={this.props}/>
             <div style={{"backgroundColor":"#efefef"}}>
                 <BoilCon>
                     <BoilLeft>
@@ -37,9 +41,15 @@ class Boil extends React.Component{
                         </BoilHeader>
                         
                         <BoilList>
-                            {this.props.list.map((item)=>{
+                            {
+
+                                this.props.boli_list.map((item)=>{
+                                if(!item.node){
+                                    return
+                                }
                                 return (
-                                    <BoilConItem key={item.id}>
+                                    // <BoilConItem key={item.node.targets[0].id}></BoilConItem>
+                                    <BoilConItem key={item.node.targets[0].id}>
                                         <BoilConItemCon>
                                             <BoilConLeft><img src={item.node.actors[0].avatarLarge} style={{'height':'100%','width':'100%'}}/></BoilConLeft>
                                             <BoilConRight>
@@ -55,7 +65,8 @@ class Boil extends React.Component{
                                         </BoilConBottom>
                                     </BoilConItem>
                                 )
-                            })}
+                                })
+                            }
                         </BoilList>
                     </BoilLeft>
                     <BoilRight>
@@ -81,8 +92,11 @@ class Boil extends React.Component{
                             </BoilRightTopicTitle>
                             {
                                 this.props.topic.map((item)=>{
+                                    if(!item.objectId){
+                                        return
+                                    }
                                     return (
-                                        <BoilRightTopicCon>
+                                        <BoilRightTopicCon key={item.objectId}>
                                             <img style={{"float":"left","width":"40px","margin":"5px 10px 0px 5px"}} src={item.icon}/>
                                             <BoilRightTopicConItem>{item.title}</BoilRightTopicConItem>
                                         </BoilRightTopicCon>
@@ -99,38 +113,24 @@ class Boil extends React.Component{
         )
     }
     componentDidMount(){
-        this.props.showTopicList();
+        this.props.showTopicList()
     }
 }
 const mapStateToProps=(state)=>{
-    console.log(state.get('home').get('list'))
-    return{
-        homeheader:state.get('home').get('homeheader'),
-        sortleft:state.get('home').get('sortleft'),
-        sortright:state.get('home').get('sortright'),
-        
-
-        list:state.get('home').get('list'),
-        user:state.get('home').get('user'),
-        topic:state.get('home').get('topic')
+    return {
+        boli_list:state.get('boil').get('boli_list'),
+        user:state.get('boil').get('user'),
+        topic:state.get('boil').get('topic'),
     }
 }
-const mapDispatchToProps=(dispatch)=>{
-    return{
-        showTopicList(){
-            dispatch(actionCreators.homeheader())
-            dispatch(actionCreators.sortleft())
-            
-            dispatch(actionCreators.showtopiclist())
-            //dispatch(actionCreators.showlist())
-            dispatch(actionCreators.getshowlist('1'))
-            dispatch(actionCreators.showuserlist())
-        },
-        clickChangeList(id){
-            console.log(1)
-            dispatch(actionCreators.getshowlist(id))
-        }
-        
+const mapDispatchToProps=(dispatch)=>({
+    showTopicList(){
+        dispatch(actionCreators.showtopiclist())
+        dispatch(actionCreators.getshowlist())
+        dispatch(actionCreators.showuserlist())
+    },
+    clickChangeList(id){
+        dispatch(actionCreators.getshowlist(id))
     }
-}
+})
 export default connect(mapStateToProps,mapDispatchToProps)(Boil)

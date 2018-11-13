@@ -72,6 +72,9 @@ class Home extends React.Component{
                     <HomeRight>
                         {      
                             this.props.user.map((item,index)=>{
+                                if(!item.id){
+                                    return;
+                                }
                                 return (
                                     <HomeUserList key={item.id}>
                                     <HomeUserListCon>
