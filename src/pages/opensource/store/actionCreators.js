@@ -54,10 +54,34 @@ export const getshowlist=(id)=>{
 export const showuserlist=(data)=>({
     type:constants.SHOW_USER_LIST,
     data:[
-        {id:'1',val:'前端',sort:[{id:'1',con:'Javascript'},{id:'2',con:'Css'},{id:'3',con:'Vue'},{id:'4',con:'React'},{id:'5',con:'Angular'}]},
-        {id:'2',val:'Android',sort:[{id:'1',con:'菜单'},{id:'1',con:'ListView'},{id:'1',con:'手势交互'},{id:'1',con:'导航'},{id:'1',con:'Ar&Vr'}]},
-        {id:'3',val:'iOS',sort:[{id:'1',con:'菜单'},{id:'1',con:'ListView'},{id:'1',con:'手势交互'},{id:'1',con:'导航'},{id:'1',con:'Ar&Vr'}]},
-        {id:'4',val:'Python',sort:[{id:'1',con:'菜单'},{id:'1',con:'ListView'},{id:'1',con:'手势交互'},{id:'1',con:'导航'},{id:'1',con:'Ar&Vr'}]},
+        {id:'1',val:'前端',
+            sort:[
+                {id:'1_1',con:'Javascript'},
+                {id:'1_2',con:'Css'},
+                {id:'1_3',con:'Vue'},
+                {id:'1_4',con:'React'},
+                {id:'1_5',con:'Angular'}]},
+        {id:'2',val:'Android',
+            sort:[
+                {id:'2_1',con:'菜单'},
+                {id:'2_2',con:'ListView'},
+                {id:'2_3',con:'手势交互'},
+                {id:'2_4',con:'导航'},
+                {id:'2_5',con:'Ar&Vr'}]},
+        {id:'3',val:'iOS',
+            sort:[
+                {id:'3_1',con:'菜单'},
+                {id:'3_2',con:'ListView'},
+                {id:'3_3',con:'手势交互'},
+                {id:'3_4',con:'导航'},
+                {id:'3_5',con:'Ar&Vr'}]},
+        {id:'4',val:'Python',
+            sort:[
+                {id:'4_1',con:'菜单'},
+                {id:'4_2',con:'ListView'},
+                {id:'4_3',con:'手势交互'},
+                {id:'4_4',con:'导航'},
+                {id:'4_5',con:'Ar&Vr'}]},
 
     ]
 })

@@ -61,8 +61,9 @@ class Home extends React.Component{
                                 if(!item.category){
                                     return;
                                 }
+
                                 return (
-                                    <HomeTopicListItem key={item.category.id}>
+                                    <HomeTopicListItem key={item.objectId}>
                                         <Link to="/juejin/detail">
                                         <HomeTopicListItemLeft>
                                             <HomeTopicListItemLeftTitle>
@@ -71,7 +72,8 @@ class Home extends React.Component{
                                                 <HomeTopicListItemLeftTitleEvery>{item.updatedAt}</HomeTopicListItemLeftTitleEvery>
                                                 <HomeTopicListItemLeftTitleEvery>
                                                     {item.tags.map((k,index)=>{
-                                                        return <p style={{"float":"left"}}>{k.title}|</p>
+
+                                                        return <p style={{"float":"left"}} key={k.id}>{k.title}|</p>
                                                     })}
                                                 </HomeTopicListItemLeftTitleEvery>
                                             </HomeTopicListItemLeftTitle>

@@ -40,9 +40,9 @@ class Booklet extends React.Component{
                                         <BookletLeftItem key={item.id}>
                                             <BookletLeftItemLeft><img style={{"width":"100%","height":"100%"}} src={item.img}/></BookletLeftItemLeft>
                                             <BookletLeftItemRight>
-                                                <BookletLeftItemRightTop style={{"font-size":"20px",}}>{item.title}</BookletLeftItemRightTop>
-                                                <BookletLeftItemRightTop style={{"font-size":"15px","height":"23px","color":"#7d7c7c",'overflow':"hidden","white-space":"nowrap","text-overflow":"ellipsis"}}>{item.desc}</BookletLeftItemRightTop>
-                                                <BookletLeftItemRightTop style={{"font-size":"13px","height":"23px","color":"#7d7c7c"}}>{item.userData.username}&nbsp;●&nbsp;{item.userData.company}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"fontSize":"20px",}}>{item.title}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"fontSize":"15px","height":"23px","color":"#7d7c7c",'overflow':"hidden","whiteSpace":"nowrap","textOverflow":"ellipsis"}}>{item.desc}</BookletLeftItemRightTop>
+                                                <BookletLeftItemRightTop style={{"fontSize":"13px","height":"23px","color":"#7d7c7c"}}>{item.userData.username||''}&nbsp;●&nbsp;{item.userData.company}</BookletLeftItemRightTop>
                                                 <BookletLeftItemRightTop style={{"color":"#a09f9f"}}>￥:{item.price}&nbsp;&nbsp;&nbsp;{item.buyCount}人已购买</BookletLeftItemRightTop>
                                             </BookletLeftItemRight>
                                     </BookletLeftItem>

@@ -24,9 +24,10 @@ class Home extends React.Component{
                         <OpenSourceBanner>
                             {
                                 this.props.topic.map((item,index)=>{
-                                    if(index!=0){
+                                    if(index!=0||!item.title){
                                         return;
                                     }
+
                                     return(
                                         <OpenSourceBannerItem key={item.objectId}>
                                             <OpenSourceBannerItemTitle>
@@ -72,9 +73,10 @@ class Home extends React.Component{
                     <HomeRight>
                         {      
                             this.props.user.map((item,index)=>{
-                                if(!item.id){
+                                if(!item.sort){
                                     return;
                                 }
+                                console.log(item)
                                 return (
                                     <HomeUserList key={item.id}>
                                     <HomeUserListCon>
