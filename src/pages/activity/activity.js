@@ -21,13 +21,19 @@ class Home extends React.Component{
                     <HomeHeader>
                         <HomeHeader className="homeHeader">
                         {
-                            this.props.homeheader.map((item)=>{
-                                var id=item.id;
-                                return <HomeHeaderItem key={item.id} className={this.props.clickHeader===item.id?'headerActive':''} 
-                                    onClick={()=>this.props.clickChangeList(id)} key={item.id}>
-                                <Link to={{pathname:'/juejin/activity/'+id}}>{item.val}</Link>
-                                </HomeHeaderItem>
-                            })
+                         
+                            // this.props.city.map((item)=>{
+                            //     console.log(this.props)
+                            //     if(!item||!item.cityAlias){
+                            //         return;
+                            //     }
+                            //     return(
+                            //         <HomeHeaderItem key={item.cityAlias} className={this.props.clickHeader===item.cityAlias?'headerActive':''} 
+                            //             onClick={()=>this.props.clickChangeList(cityAlias)} key={item.cityAlias}>
+                            //         <Link to={{pathname:'/juejin/activity/'+cityAlias}}>{item.cityName}</Link>
+                            //         </HomeHeaderItem>
+                            //     )
+                            // })
                         }
                         </HomeHeader>
                     </HomeHeader>
@@ -39,7 +45,7 @@ class Home extends React.Component{
                         <ActivityConList>
                             {
                                 this.props.list.map((item)=>{
-                                    if(!item.id){
+                                    if(!item._id){
                                         return;
                                     }
                                     return(
@@ -68,30 +74,19 @@ class Home extends React.Component{
 }
 const mapStateToProps=(state)=>{
     return{
-        homeheader:state.get('activity').get('homeheader'),
-        sortleft:state.get('activity').get('sortleft'),
-        sortright:state.get('activity').get('sortright'),
-        
-        topic:state.get('activity').get('topic'),
+        city:state.get('activity').get('city'),
         list:state.get('activity').get('list'),
-        user:state.get('activity').get('user'),
         clickHeader:state.get('activity').get('clickHeader'),
     }
 }
 const mapDispatchToProps=(dispatch)=>{
     return{
         showTopicList(){
-            dispatch(actionCreators.homeheader())
-            dispatch(actionCreators.sortleft())
-            
-            //dispatch(actionCreators.showtopiclist())
-            //dispatch(actionCreators.showlist())
-            dispatch(actionCreators.getshowlist('1'))
-            dispatch(actionCreators.showuserlist())
+            dispatch(actionCreators.getshowcity())
+            dispatch(actionCreators.getshowlist())
         },
         clickChangeList(id){
-            console.log(id)
-            dispatch(actionCreators.headerActive(id))
+            dispatch(actionCreators.headerActive())
             //dispatch(actionCreators.getshowlist(id))
         }
         
