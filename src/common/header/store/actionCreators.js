@@ -36,3 +36,17 @@ export const headerActive=(data)=>({
     type:constants.CLICK_HEADER_ACTIVE,
     data:data
 })
+export const UserMark=(data)=>({
+    type:constants.CLICK_USER_MARK,
+    data:data
+})
+export const clickUserMark=(mark)=>{
+    return (dispatch)=>{
+        console.log(mark)
+        if(mark===1){
+            dispatch(UserMark(0))
+        }else{
+            dispatch(UserMark(1))
+        }
+    }   
+}

@@ -25,7 +25,11 @@ class Home extends React.Component{
                         <HomeHeader className="homeHeader">
                         {
                             this.props.homeheader.map((item)=>{
-                                var id=item.id;
+
+                                if(item.id){
+                                    return;
+                                }
+                                var id=item.id
                                 return <HomeHeaderItem key={item.id} className={this.props.clickHeader===item.id?'headerActive':''} 
                                     onClick={()=>this.props.clickChangeList(id)} key={item.id}>
                                 <Link to={{pathname:'/juejin/home/'+id}}>{item.val}</Link>

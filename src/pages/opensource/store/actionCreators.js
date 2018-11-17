@@ -32,7 +32,7 @@ export const showtopic=(data)=>({
 export const getshowtopic=()=>{
     return (dispatch) => {
         axios.get('http://localhost:3000/api/opensource/opensource_banner.json').then(function(response){
-            console.log(response)
+
             var data=eval('(' + response.data + ')').d.entrylist;
             dispatch(showtopic(data))
         }) 

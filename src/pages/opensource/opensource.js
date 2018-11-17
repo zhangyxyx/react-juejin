@@ -76,7 +76,6 @@ class Home extends React.Component{
                                 if(!item.sort){
                                     return;
                                 }
-                                console.log(item)
                                 return (
                                     <HomeUserList key={item.id}>
                                     <HomeUserListCon>
@@ -128,7 +127,7 @@ const mapDispatchToProps=(dispatch)=>{
             
         },
         clickChangeList(id){
-            console.log(1)
+
             dispatch(actionCreators.getshowlist(id))
         }
         

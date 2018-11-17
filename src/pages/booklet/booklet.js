@@ -33,6 +33,7 @@ class Booklet extends React.Component{
                        <BookletLeft>
                            {
                                this.props.list.map((item)=>{
+                                   
                                     if(!item.id){
                                         return;
                                     }
@@ -97,7 +98,6 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch(actionCreators.showuserlist())
         },
         clickChangeList(id){
-            console.log(1)
             dispatch(actionCreators.getshowlist(id))
         }
         

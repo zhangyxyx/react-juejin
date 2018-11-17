@@ -4,7 +4,9 @@ import {
     HeaderWrapper,HeaderLeft,HeaderMsg,HeaderMsgList,
     HeaderCon,HeaderConLeft,HeaderRight,HeaderRightUser,
     HeaderInput,HeaderSearch,HeaderSearchBtn,
-    HeaderWrite} from './style.js'
+    HeaderWrite,
+    HeaderUser,HeaderUserItem,HeaderUserItemEvery
+    } from './style.js'
 import {connect} from 'react-redux'
 import {actionCreators} from './store'
 
@@ -20,6 +22,24 @@ class Header extends React.Component{
                 {id:'3',val:'小册',mark:'booklet',pic:'\ue634'},
                 {id:'4',val:'开源库',mark:'opensource',pic:'\ue634'},
                 {id:'5',val:'活动',mark:'activity',pic:'\ue634'},
+            ],
+            headerUser:[
+                {id:'1',sort:[
+                    {id:'1_1',title:'写文章',mark:'&#xe63e;'},
+                    {id:'1_2',title:'草稿',mark:'&#xe61e;'},
+                ]},
+                {id:'2',sort:[
+                    {id:'2_1',title:'我的主页',mark:'&#xe60a;'},
+                    {id:'2_2',title:'我赞过的',mark:'&#xe627;'},
+                    {id:'2_3',title:'我的收藏集',mark:'&#xe66a;'},
+                    {id:'2_4',title:'已购',mark:'&#xe602;'},
+                    {id:'2_5',title:'标签管理',mark:'&#xe64f;'},
+                ]},
+                {id:'3',sort:[
+                    {id:'3_1',title:'设置',mark:'&#xe60c;'},
+                    {id:'3_2',title:'关于',mark:'&#xe95c;'},
+                    {id:'3_3',title:'登出',mark:'&#xe647;'},
+                ]},   
             ],
         }
     }
@@ -74,8 +94,30 @@ class Header extends React.Component{
                         </HeaderSearch>
                         <HeaderWrite>写文章</HeaderWrite>
                         <HeaderRightUser>
-                            <img src="http://upload.jianshu.io/users/upload_avatars/5256327/ffff0f51-d286-47fe-9e5c-a513372cb626.png?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120" style={{"width":"100%","height":"100%"}}/>
+                            <img className="user" onClick={()=>this.props.clickUserMark(this.props.userShow)} src="http://upload.jianshu.io/users/upload_avatars/5256327/ffff0f51-d286-47fe-9e5c-a513372cb626.png?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120" style={{"width":"100%","height":"100%","cursor":"pointer"}}/>
+                            <HeaderUser className={this.props.userShow===0?'active':''}>
+                                {
+                                    this.state.headerUser.map((item)=>{
+                                        return (
+                                            <HeaderUserItem key={item.id}>
+                                                {
+                                                    item.sort.map((k)=>{
+                                                        return(
+                                                            <HeaderUserItemEvery key={k.id}>
+                                                                <Link to={{pathname:'/juejin/user'}}>
+                                                                    <i className="iconfont" style={{"margin":"0px 10px 0px 20px"}}>&#xe69b;</i>{k.title}
+                                                                </Link>
+                                                            </HeaderUserItemEvery>
+                                                        )
+                                                    })
+                                                }
+                                            </HeaderUserItem>
+                                        )
+                                    })
+                                }
+                            </HeaderUser>
                         </HeaderRightUser>
+                        
                         <i className="iconfont" style={{"float":"right","fontSize":"25px","marginTop":"10px"}}>&#xe69b;</i>
                     </HeaderCon>
                     </HeaderWrapper>
@@ -86,11 +128,13 @@ class Header extends React.Component{
     
 }
 const mapStateToProps=(state)=>{
+    console.log(state.get('header').get('userShow'))
     return{
         focused:state.get('header').get('focused'),
         message:state.get('header').get('message'),
         messagetwolist:state.get('header').get('messagetwolist'),
-        clickHeader:state.get('header').get('clickHeader')
+        clickHeader:state.get('header').get('clickHeader'),
+        userShow:state.get('header').get('userShow')
     }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -114,6 +158,9 @@ const mapDispatchToProps=(dispatch)=>{
         },
         clickHeaderActive(item){
             dispatch(actionCreators.headerActive(item))//是否显示消息下面二级菜单 
+        },
+        clickUserMark(mark){
+            dispatch(actionCreators.clickUserMark(mark))//
         }
     }
 }

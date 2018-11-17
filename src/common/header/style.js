@@ -72,6 +72,32 @@ export const HeaderRight=styled.div`
     margin-top:10px;
     border-radius:20px;
 `
+export const HeaderUser=styled.div`
+    width:158px;
+    border-radius:3px;
+    border:1px solid #ccc;
+    position:absolute;
+    left:-114px;
+    top:44px;
+    background:#fff;
+    text-lign:center;
+    display:none;
+    &.active{
+        display:block;
+    }
+`
+export const HeaderUserItem=styled.div`
+    border-bottom:1px solid #ccc;
+
+`
+export const HeaderUserItemEvery=styled.div`
+    padding:10px 0px;
+    cursor:pointer;
+    &:hover{
+        background:#efefef
+    }
+    
+`
 export const HeaderRightUser=styled.div`
     width:30px;
     height:30px;
@@ -79,6 +105,7 @@ export const HeaderRightUser=styled.div`
     float:right;
     margin:10px 10px;
     border:1px solid #333;
+    position:relative;
 `
 export const HeaderSearch=styled.div`
     width:178px;

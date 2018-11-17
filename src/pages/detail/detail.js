@@ -16,9 +16,9 @@ class Detail extends React.Component{
             <DetailCon>
                 <DetailConLeft>
                     <DetailConLeftTitle>
-                        <img style={{"width":"30px","height":"30px","float":"left"}} src='https://user-gold-cdn.xitu.io/2018/5/16/1636811dc757d981?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'/>
+                        <img style={{"width":"30px","height":"30px","float":"left","margin":"10px 10px 10px 30px"}} src='https://user-gold-cdn.xitu.io/2018/5/16/1636811dc757d981?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'/>
                         <DetailConLeftTitleCon>
-                            <DetailConLeftTitleConP>老钱</DetailConLeftTitleConP>
+                            <DetailConLeftTitleConP style={{"fontWeight":"500"}}>老钱</DetailConLeftTitleConP>
                             <DetailConLeftTitleConP>2018年10月26日</DetailConLeftTitleConP>
                         </DetailConLeftTitleCon>
                     </DetailConLeftTitle>
@@ -33,8 +33,8 @@ class Detail extends React.Component{
                         <DetailConRightUserCon>
                             <img style={{"width":"30px","height":"30px"}} src='https://user-gold-cdn.xitu.io/2018/5/16/1636811dc757d981?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1'/>
                         </DetailConRightUserCon>
-                        <DetailConRightUserRead><i className="iconfont" style={{'marginRight':"5px"}}>&#xe627;</i></DetailConRightUserRead>
-                        <DetailConRightUserRead><i className="iconfont" style={{'marginRight':"5px"}}>&#xe6ab;</i></DetailConRightUserRead>
+                        <DetailConRightUserRead><i className="iconfont" style={{'marginRight':"5px"}}>&#xe627;</i>获得赞数</DetailConRightUserRead>
+                        <DetailConRightUserRead><i className="iconfont" style={{'marginRight':"5px"}}>&#xe6ab;</i>获得阅读数</DetailConRightUserRead>
                     </DetailConRightUser>
                 </DetailConRight>
             </DetailCon>

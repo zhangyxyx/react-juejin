@@ -22,18 +22,21 @@ class Home extends React.Component{
                         <HomeHeader className="homeHeader">
                         {
                          
-                            // this.props.city.map((item)=>{
-                            //     console.log(this.props)
-                            //     if(!item||!item.cityAlias){
-                            //         return;
-                            //     }
-                            //     return(
-                            //         <HomeHeaderItem key={item.cityAlias} className={this.props.clickHeader===item.cityAlias?'headerActive':''} 
-                            //             onClick={()=>this.props.clickChangeList(cityAlias)} key={item.cityAlias}>
-                            //         <Link to={{pathname:'/juejin/activity/'+cityAlias}}>{item.cityName}</Link>
-                            //         </HomeHeaderItem>
-                            //     )
-                            // })
+                            this.props.city.map((item)=>{
+                                
+                                if(!item||!item.cityAlias){
+                                    return;
+                                }
+                                console.log(item.cityAlias)
+                                return(
+                                    <HomeHeaderItem key={item.cityAlias}  className={this.props.clickHeader===item.cityAlias?'headerActive':''}
+                                        onClick={()=>this.props.clickChangeList(item.cityAlias)} key={item.cityAlias}>
+                                        <Link to={{pathname:'/juejin/activity/'+item.cityAlias}}>{item.cityName}</Link>
+                                    </HomeHeaderItem>
+                                )
+
+                                
+                            })
                         }
                         </HomeHeader>
                     </HomeHeader>
@@ -48,8 +51,9 @@ class Home extends React.Component{
                                     if(!item._id){
                                         return;
                                     }
+ 
                                     return(
-                                    <ActivityConListItem key={item.id}>
+                                    <ActivityConListItem key={item._id}>
                                         <img style={{"width":"100%"}} src={item.screenshot}/>
                                         <ActivityConListItemTitle>{item.title}</ActivityConListItemTitle>
                                         <ActivityConListItemP><i className="iconfont" style={{'marginRight':"5px"}}>&#xe608;</i>{item.startTime}</ActivityConListItemP>

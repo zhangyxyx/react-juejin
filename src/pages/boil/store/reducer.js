@@ -16,7 +16,6 @@ export default (state=defaultState,action)=>{
         return state.set('topic',action.data)
     }
     if(action.type===constants.SHOW_LIST){
-        console.log(action.data)
         // return state.merge({
         //     boli_list:action.data
         // })
