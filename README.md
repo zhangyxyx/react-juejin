@@ -24,7 +24,7 @@
  * 执行：
       * npm run build //执行这个命令就可以了，然后将项目中的build文件夹全部复制到服务器上面去
       * 我直接用的是找了一台公司的测试环境试的demo,用winscp直接将代码拖到环境中的
-      ![]('https://github.com/GainLoss/react-juejin/blob/master/src/static/read/1.png')
+      ![Image text](https://github.com/GainLoss/react-juejin/blob/master/src/static/read/1.png)
       
  * 注意：
      * 打开网址的时候以index.html格式打开，显示空白页面：
