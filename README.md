@@ -20,5 +20,12 @@
  * create-react-app也进行了一些变化，项目的配置文件是放在node_modules中的react-script文件夹中
 ### 链接
  * https://www.cnblogs.com/GainLoss/p/7743128.html
+### 打包上线
+ * 执行：
+      npm run build //执行这个命令就可以了，然后将项目中的build文件夹全部复制到服务器上面去
+ * 注意：
+     * 打开网址的时候以index.html格式打开，显示空白页面：
+         * 如果你希望以.../index.htm这种方式访问应用，那么你可以在package.json文件中增加一个homepage字段，如下："homepage": ".",
+         * 如果你是BrowserRouter设置路由的话，改成HashRouter这样页面页面才会出来
 ----
 
