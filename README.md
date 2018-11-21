@@ -12,8 +12,8 @@
  * 构建:npm run build
 ### 技术栈
  * react16.0 redux5.0 react-router4.3
- * 项目结构
- ![Image text](https://github.com/GainLoss/react-juejin/blob/master/src/static/read/2.png)
+ * 项目结构：
+  * ![Image text](https://github.com/GainLoss/react-juejin/blob/master/src/static/read/2.png)
 ### 目标功能
  * 打开主页面之后正常走一个流程，进入到主页面，可以点击选择跳转到其他页面，在其他页面中也可以进入到详情页面
  * 项目架构直接是create-react-app构建的，路由是react-router4创建，数据是react-redux进行交换的。
