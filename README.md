@@ -22,7 +22,10 @@
  * https://www.cnblogs.com/GainLoss/p/7743128.html
 ### 打包上线
  * 执行：
-      npm run build //执行这个命令就可以了，然后将项目中的build文件夹全部复制到服务器上面去
+      * npm run build //执行这个命令就可以了，然后将项目中的build文件夹全部复制到服务器上面去
+      * 我直接用的是找了一台公司的测试环境试的demo,用winscp直接将代码拖到环境中的
+      ![]('')
+      
  * 注意：
      * 打开网址的时候以index.html格式打开，显示空白页面：
          * 如果你希望以.../index.htm这种方式访问应用，那么你可以在package.json文件中增加一个homepage字段，如下："homepage": ".",
