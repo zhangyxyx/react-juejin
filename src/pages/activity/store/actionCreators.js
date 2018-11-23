@@ -1,5 +1,6 @@
 import * as constants from './constants'
 import axios from 'axios'
+var url=window.sessionStorage.getItem('key');
 //城市
 export const showcity=(data)=>({
     type:constants.SHOW_CITY,
@@ -7,7 +8,7 @@ export const showcity=(data)=>({
 }) 
 export const getshowcity=()=>{
     return (dispatch) => { 
-        axios.get('http://localhost:3000/api/activity/activity_city.json').then(function(response){
+        axios.get(url+'/api/activity/activity_city.json').then(function(response){
             var data=eval('(' + response.data + ')').d;
             console.log(data)
             dispatch(showcity(data))
@@ -21,7 +22,7 @@ export const showlist=(data)=>({
 })
 export const getshowlist=(id)=>{
     return (dispatch) => { //activity_list
-        axios.get('http://localhost:3000/api/activity/activity_list.json').then(function(response){
+        axios.get(url+'/api/activity/activity_list.json').then(function(response){
             var data=eval('(' + response.data + ')').d;
             dispatch(showlist(data))
         })   

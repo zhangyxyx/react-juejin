@@ -1,5 +1,6 @@
 import * as constants from './constants'
 import axios from 'axios'
+var url=window.sessionStorage.getItem('key');
 export const homeheader=(data)=>({
     type:constants.HOME_HEADER,
     data:[
@@ -31,7 +32,7 @@ export const showtopic=(data)=>({
 })
 export const getshowtopic=()=>{
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/opensource/opensource_banner.json').then(function(response){
+        axios.get(url+'/api/opensource/opensource_banner.json').then(function(response){
 
             var data=eval('(' + response.data + ')').d.entrylist;
             dispatch(showtopic(data))
@@ -45,7 +46,7 @@ export const showlist=(data)=>({
 })
 export const getshowlist=(id)=>{
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/opensource/opensource_list.json').then(function(response){
+        axios.get(url+'/api/opensource/opensource_list.json').then(function(response){
             var data=eval('(' + response.data + ')').d.repoList;
             dispatch(showlist(data))
         }) 

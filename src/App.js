@@ -10,17 +10,21 @@ import Detail from './pages/detail/detail.js'//详情
 import User from './pages/user/user.js'//主页
 
 
+
 import {Provider} from 'react-redux'
-import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import {BrowserRouter,Route,Switch,HashRouter} from 'react-router-dom'
 import store from './store'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+  }
   render() {
     return (
       <Provider store={store}>
         <div>
 
-          <BrowserRouter>
+          <HashRouter>
             <div>
               <Route path="/" exact component={Home}/>
               
@@ -44,7 +48,7 @@ class App extends Component {
               <Route path="/juejin/user" exact component={User}></Route>
               
             </div>
-          </BrowserRouter>
+          </HashRouter>
         </div>
       </Provider>
     );

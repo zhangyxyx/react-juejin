@@ -23,6 +23,10 @@ class Booklet extends React.Component{
                         <HomeHeader className="homeHeader">
                         {
                             this.props.homeheader.map((item)=>{
+                                
+                                if(!item.id){
+                                    return;
+                                }
                                 var id=item.id;
                                 return <HomeHeaderItem key={item.id} onClick={()=>this.props.clickChangeList(id)} key={item.id}><Link to={{pathname:'/juejin/booklet/'+id}}>{item.val}</Link></HomeHeaderItem>
                             })
@@ -34,7 +38,7 @@ class Booklet extends React.Component{
                            {
                                this.props.list.map((item)=>{
                                    
-                                    if(!item.id){
+                                    if(!item.userData||!item.userData.username){
                                         return;
                                     }
                                     return (

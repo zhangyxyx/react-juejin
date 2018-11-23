@@ -1,5 +1,6 @@
 import * as constants from './constants'
 import axios from 'axios'
+var url=window.sessionStorage.getItem('key');
 export const homeheader=(data)=>({
     type:constants.HOME_HEADER,
     data:[
@@ -46,7 +47,8 @@ export const showlist=(data)=>({
 })
 export const getshowlist=()=>{
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/home/home_list.json').then(function(response){
+        axios.get(url+'/api/home/home_list.json').then(function(response){
+            //var data=response.data.result.nodeindex.default
             var data=eval('(' + response.data + ')').entrylist;
             dispatch(showlist(data))
         })   
@@ -58,7 +60,8 @@ export const showuser=(data)=>({
 })
 export const showuserlist=()=>{
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/home/home_person.json').then((response)=>{
+
+        axios.get(url+'/api/home/home_person.json').then((response)=>{
             var data=eval('(' + response.data + ')').d[0].users
             dispatch(showuser(data))
         })
@@ -70,7 +73,7 @@ export const showbook=(data)=>({
 })
 export const showbooklist=()=>{
     return (dispatch)=>{
-        axios.get('http://localhost:3000/api/home/home_xiaoce.json').then((response)=>{
+        axios.get(url+'/api/home/home_xiaoce.json').then((response)=>{
             var data=eval('(' + response.data + ')').d.data
             dispatch(showbook(data))
         })

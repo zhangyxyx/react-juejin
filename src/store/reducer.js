@@ -6,6 +6,8 @@ import opensourceReducer from '../pages/opensource/store/reducer'
 import detailRedcuer from '../pages/detail/store/reducer'
 import activityRedcuer from '../pages/activity/store/reducer'
 
+
+
 const reducer= combineReducers({
     header:headerReducer,
     home:homeReducer,

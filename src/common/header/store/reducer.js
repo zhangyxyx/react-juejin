@@ -31,5 +31,6 @@ export default (state=defaultState,action)=>{
         console.log(action.data)
         return state.set('userShow',action.data)
     }
+
     return state
 }

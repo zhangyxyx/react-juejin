@@ -42,6 +42,9 @@ class Home extends React.Component{
                         <OpenSourceTitle>
                             {
                                 this.props.sortleft.map((item,index)=>{
+                                    if(!item.val){
+                                        return;
+                                    }
                                     if(index<=2){
                                         return <HomeLeftSortItem key={item.id}>{item.val}</HomeLeftSortItem>
                                     }else {
@@ -53,6 +56,9 @@ class Home extends React.Component{
                         </OpenSourceTitle>
                         <OpenSourceList>
                             {this.props.list.map((item)=>{
+                                if(!item.language){
+                                    return;
+                                }
                                 return (
                                    <OpenSourceListItem key={item.id}>
                                        <OpenSourceListItemLeft><img src={item.userAvatarUrl} style={{"width":"100%"}}/></OpenSourceListItemLeft>

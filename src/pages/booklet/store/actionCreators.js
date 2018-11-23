@@ -1,5 +1,6 @@
 import * as constants from './constants'
 import axios from 'axios'
+var url=window.sessionStorage.getItem('key');
 export const homeheader=(data)=>({
     type:constants.HOME_HEADER,
     data:[
@@ -42,7 +43,7 @@ export const showlist=(data)=>({
 })
 export const getshowlist=(id)=>{
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/booklet/booklet_list.json').then((response)=>{
+        axios.get(url+'/api/booklet/booklet_list.json').then((response)=>{
             var data=eval('(' + response.data + ')').d;
             dispatch(showlist(data))
         })

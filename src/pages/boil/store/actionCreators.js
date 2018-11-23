@@ -1,5 +1,6 @@
 import * as constants from './constants'
 import axios from 'axios'
+var url=window.sessionStorage.getItem('key');
 export const homeheader=(data)=>({
     type:constants.HOME_HEADER,
     data:[
@@ -34,7 +35,7 @@ export const showtopic=(data)=>({
 })
 export const showtopiclist=()=>{
     return (dispatch)=>{
-        axios.get('http://localhost:3000/api/boil/boil_topic.json').then((response)=>{
+        axios.get(url+'/api/boil/boil_topic.json').then((response)=>{
             var data=eval('(' + response.data + ')').d.list
             dispatch(showtopic(data))
         })
@@ -47,7 +48,7 @@ export const showlist=(data)=>({
 })
 export const getshowlist=()=>{
     return (dispatch) => {
-        axios.get('http://localhost:3000/api/boil/boil_list.json').then((response)=>{
+        axios.get(url+'/api/boil/boil_list.json').then((response)=>{
            
             var data=eval('(' + response.data + ')').data.followingActivityFeed.items.edges
             dispatch(showlist(data))

@@ -168,6 +168,8 @@ const mapStateToProps=(state)=>{
         user:state.get('home').get('user'),
         book:state.get('home').get('book'),
         clickHeader:state.get('home').get('clickHeader'),
+
+
     }
 }
 const mapDispatchToProps=(dispatch)=>{
@@ -180,6 +182,8 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch(actionCreators.getshowlist())//显示列表
             dispatch(actionCreators.showuserlist())//显示感兴趣的人
             dispatch(actionCreators.showbooklist())//显示小册
+
+
         },
         clickChangeList(id){
             dispatch(actionCreators.headerActive(id))
