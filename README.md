@@ -32,5 +32,11 @@
      * 打开网址的时候以index.html格式打开，显示空白页面：
          * 如果你希望以.../index.htm这种方式访问应用，那么你可以在package.json文件中增加一个homepage字段，如下："homepage": ".",
          * 如果你是BrowserRouter设置路由的话，改成HashRouter这样页面页面才会出来
+    * 引入组件的时候用了一个@替代路径：
+         * 方法是：在node_modules中react-scripts->config->webpack.config.dev.js(生产环境文件和开发环境文件一样要改)中的resolve中修改
+            alias: {
+               'react-native': 'react-native-web',
+               '@': paths.appSrc,
+             },
 ----
 
