@@ -35,8 +35,7 @@
     * 引入组件的时候用了一个@替代路径：
          * 方法是：在node_modules中react-scripts->config->webpack.config.dev.js(生产环境文件和开发环境文件一样要改)中的resolve中修改
             alias: {
-               'react-native': 'react-native-web',
-               '@': paths.appSrc,
+               '@': paths.appSrc,//paths是引入的一个js文件 同级的
              },
 ----
 
