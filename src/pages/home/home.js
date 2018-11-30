@@ -104,16 +104,16 @@ class Home extends React.Component{
                                 你可能感兴趣的小册
                             </HomeUserTitle>
                             {
-                                this.props.book.map((item)=>{
-                                    if(!item.objectId){
-                                        return;
-                                    }
+                                this.props.book.map((item,index)=>{
+                                    // if(!item.objectId){
+                                    //     return;
+                                    // }
                                     return (
-                                        <HomeUserList key={item.objectId}>
-                                        <HomeUserListLeft><img style={{"width":"100%"}} src={item.img}/></HomeUserListLeft>
+                                        <HomeUserList key={index}>
+                                        {/* <HomeUserListLeft><img style={{"width":"100%"}} src={item.img}/></HomeUserListLeft> */}
                                         <HomeUserListCon>
-                                            <HomeUserListConTop>{item.title}</HomeUserListConTop>
-                                            <HomeUserListConBottom>{item.buyCount}人购买</HomeUserListConBottom>
+                                            <HomeUserListConTop>{item.nodename}</HomeUserListConTop>
+                                            <HomeUserListConBottom>{item.nodesyscode}人购买</HomeUserListConBottom>
                                             {/* <HomeUserListConBottom>写了{}字 · 8.7k喜欢</HomeUserListConBottom> */}
                                         </HomeUserListCon>
                                         </HomeUserList>
@@ -157,7 +157,7 @@ class Home extends React.Component{
 }
 
 const mapStateToProps=(state)=>{
-
+    console.log(state.get('home').get('list'))
     return{
         homeheader:state.get('home').get('homeheader'),
         sortleft:state.get('home').get('sortleft'),
@@ -179,8 +179,8 @@ const mapDispatchToProps=(dispatch)=>{
             dispatch(actionCreators.sortleft())
             dispatch(actionCreators.showtopiclist())
   
-            dispatch(actionCreators.getshowlist())//显示列表
-            dispatch(actionCreators.showuserlist())//显示感兴趣的人
+            //dispatch(actionCreators.getshowlist())//显示列表
+            //dispatch(actionCreators.showuserlist())//显示感兴趣的人
             dispatch(actionCreators.showbooklist())//显示小册
 
 

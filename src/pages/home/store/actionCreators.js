@@ -47,9 +47,11 @@ export const showlist=(data)=>({
 })
 export const getshowlist=()=>{
     return (dispatch) => {
-        axios.get(url+'/api/home/home_list.json').then(function(response){
-            //var data=response.data.result.nodeindex.default
-            var data=eval('(' + response.data + ')').entrylist;
+        //
+        //url+'/api/home/home_list.json'
+        axios.get('http://192.168.6.128:8080/report-service/service.jsp?pageModule=Topo_CN2').then(function(response){
+            var data=response.data.result.nodeindex.default
+            //var data=eval('(' + response.data + ')').entrylist;
             dispatch(showlist(data))
         })   
     }
@@ -73,8 +75,11 @@ export const showbook=(data)=>({
 })
 export const showbooklist=()=>{
     return (dispatch)=>{
-        axios.get(url+'/api/home/home_xiaoce.json').then((response)=>{
-            var data=eval('(' + response.data + ')').d.data
+        //'http://192.168.6.128:8080/report-service/service.jsp?pageModule=Topo_CN2'
+        //url+'/api/home/home_xiaoce.json'
+        axios.get('http://192.168.6.128:8080/report-service/service.jsp?pageModule=Topo_CN2').then((response)=>{
+            //var data=eval('(' + response.data + ')').d.data
+            var data=response.data.result.nodeindex.default
             dispatch(showbook(data))
         })
     }
