@@ -20,8 +20,9 @@
 ### 总结
  * 直接使用create-react-app创建项目，对于自身来说是很方便的，路由react-router4和之前的版本有些变化，但是变化不是很大，看一下文档就可以了，组件之间数据用react-redux交互真的很方便。
  * create-react-app也进行了一些变化，项目的配置文件是放在node_modules中的react-script文件夹中
-### 详解注意链接
+### 相关链接
  * https://www.cnblogs.com/GainLoss/p/7743128.html
+ * https://www.cnblogs.com/GainLoss/p/7753154.html
 ### 打包上线
  * 执行：
       * npm run build //执行这个命令就可以了，然后将项目中的build文件夹全部复制到服务器上面去
