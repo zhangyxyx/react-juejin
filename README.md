@@ -45,11 +45,10 @@
 > 虚拟DOM也是js代码，用js代码来表示真实的DON结构；
 类似：   
 ```
-HTML
 <div title="name"><p title="123">123</p></div>
 ``` 
 ```
- {
+{
      tag:'div',
      attrs:{
          title:'name'
