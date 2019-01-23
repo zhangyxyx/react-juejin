@@ -71,5 +71,5 @@
     2.子节点的位置不定的话，那么我们需要根据每个节点的key值来进行判断对应的key值是否是一样的
 ### 注意
 * 修改了文件的路径,需要修改这两个文件  
-![Image text](https://github.com/GainLoss/react-juejin/blob/master/src/static/read/2.png)
+![Image text](https://github.com/GainLoss/react-juejin/blob/master/src/static/read/3.png)
 
